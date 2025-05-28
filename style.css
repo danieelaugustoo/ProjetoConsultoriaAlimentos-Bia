@@ -176,7 +176,7 @@ main li {
 }
 
 .telefone,
-.email a img,
+.email,
 .whatsapp a img,
 .instagram a img,
 .linkedin a img {
@@ -214,6 +214,11 @@ main li {
 }
 
 @media screen and (max-width: 768px) {
+    
+    .tirar-mobile {
+        display: none;
+        
+    }
     header {
         display: flex;
         flex-direction: column;
@@ -225,13 +230,12 @@ main li {
     .cabecalho h1 {
         flex-direction: column;
         align-items: center;
-        flex-basis: 0.3rem;
-
-
     }
-
-    .tirarmobile a {
-        display: none;
+    .menu {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
     }
 
     main {

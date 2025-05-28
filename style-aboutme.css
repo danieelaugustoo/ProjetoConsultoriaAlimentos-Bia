@@ -180,7 +180,15 @@ main li {
     flex: 1 1 100%;
     text-align: start;
 }
-
+.atuacao a {
+    margin: 1rem;
+   font-size: 1.25rem;
+    text-decoration: none;
+    color: white;
+}
+.atuacao a:hover {
+    text-decoration: underline;
+}
 .big-li,
 .normal-li {
     font-size: 1.5rem;
@@ -211,7 +219,7 @@ main li {
 }
 
 .telefone,
-.email a img,
+.email,
 .whatsapp a img,
 .instagram a img,
 .linkedin a img {

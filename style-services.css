@@ -24,8 +24,6 @@
 body {
     font-family: 'Montserrat';
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
 }
 
 header img {
@@ -49,6 +47,99 @@ header {
     background: rgb(144, 164, 132);
     color: #ffffff;
     z-index: 1000;
+}
+
+main {
+    margin: 12rem 1rem 6rem;
+    padding: 1rem;
+    background: rgb(132, 154, 120);
+    border-radius: 0.5rem;
+    color: white;
+}
+
+main a {
+    font-size: 1.25rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+section {
+    position: relative;
+    margin: 1rem;
+}
+
+.imagem {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.imagem img {
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 4rem;
+}
+
+.servicos {
+    background: rgb(119, 139, 108);
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.servicos img {
+    margin-top: 0.75rem;
+}
+
+.servicos ul {
+    margin: 1rem;
+
+    padding: 0;
+}
+
+.pacotes {
+    background: rgb(119, 139, 108);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.servicos,
+.pacotes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.servicos > .imagem, .pacotes > .imagem {
+    width: 38%;
+    min-width: 220px;
+    max-width: 400px;
+    margin: 0;
+    align-self: flex-start;
+}
+
+.servicos > :not(.imagem), .pacotes > :not(.imagem) {
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 .cabecalho {
@@ -83,6 +174,8 @@ header {
 }
 
 .contato-info {
+    left: 0;
+    bottom: 0;
     margin: 0 auto;
     padding: 1.25rem;
     background-color: rgb(144, 164, 132);
@@ -104,7 +197,7 @@ header {
 }
 
 .telefone,
-.email a img,
+.email,
 .whatsapp a img,
 .instagram a img,
 .linkedin a img {
@@ -141,46 +234,74 @@ header {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 1268px) {
 
-    /* HEADER */
-    menu a {
+@media screen and (max-width: 768px) {
+    .menu a {
         display: none;
     }
 
-    /* MEIO DA PÁGINA */
-    .contato-texto {
-        flex-direction: column;
-        gap: 1rem;
+    main {
+        padding: 0.5rem 1%;
     }
 
-    /* FOOTER */
     .contato-info {
-        gap: 1rem;
-        height: 400px;
         flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    .contato-info a,
-    .contato-info p {
-        font-size: 0.75rem;
-        margin: 5px 0;
+        height: auto;
         gap: 1rem;
-        text-align: center;
-        color: white;
+        align-items: center;
     }
-
+    .contato-info p {
+        text-align: center;
+        font-size: 0.875rem;
+    }
+    .contato-info {
+        justify-content: space-between;
+        align-items: center;
+    }
     .telefone,
-    .email a img,
+    .email,
     .whatsapp a img,
     .instagram a img,
     .linkedin a img {
-        flex-basis: 12.5rem;
-        display: flex;
+        flex-basis: 100%;
         justify-content: center;
         align-items: center;
-
     }
 
+    .contato-info div {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .servicos, .pacotes {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .servicos > .imagem, .pacotes > .imagem {
+        width: 100%;
+        max-width: 100%;
+        margin: 1rem 0 0 0;
+        align-self: center;
+    }
+    .imagem {
+        flex-direction: column;
+        text-align: center;
+    }
+    .imagem img {
+        width: 100%;
+        max-width: 400px;
+        margin: 0.5rem auto 0 auto;
+    }
+    .container ul,
+    .atuacao ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .container li,
+    .atuacao li {
+        flex: 1 1 100%;
+        text-align: start;
+    }
 }
