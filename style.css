@@ -20,6 +20,12 @@
     text-decoration: none;
 }
 
+html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     font-family: 'Montserrat';
     background-color: #f4f4f4;
@@ -46,7 +52,7 @@ header {
     align-items: center;
     background: rgb(144, 164, 132);
     color: #ffffff;
-    z-index: 1000;
+
 }
 
 .cabecalho {
@@ -81,6 +87,7 @@ main {
     padding: 1rem;
     background: rgb(132, 154, 120);
     border-radius: 0.5rem;
+    flex: 1 0 auto;
 }
 
 main p,
@@ -160,6 +167,10 @@ main li {
     align-items: center;
     justify-content: space-around;
     gap: 2rem;
+    margin-top: auto;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }
 
 
