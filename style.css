@@ -229,7 +229,6 @@ main li {
 
 .imagem-lateral img {
     margin: 2rem;
-
     gap: 1rem;
     padding: 2rem;
     max-width: 50%;
@@ -242,7 +241,6 @@ main li {
 .sobre {
     border-radius: 0.5rem;
     margin: 1rem 0;
-
     width: 100%;
     height: auto;
 }
@@ -426,6 +424,10 @@ main li {
     word-break: break-word;
     overflow-wrap: break-word;
 }
+.treinamentos h4 {
+    font-size: 1.9rem;
+
+}
 
 
 .documentacao ul,
@@ -440,6 +442,7 @@ main li {
 }
 
 .auditoria ul,
+.documentacao li,
 .auditoria li {
     font-size: 1.5rem;
 }
@@ -483,7 +486,7 @@ main li {
     gap: 0.7rem;
     flex-direction: row;
     justify-content: space-between;
-    height: 100px;
+    height: 120px;
     width: 100%;
     padding: 0;
 }
@@ -493,7 +496,7 @@ main li {
     border-radius: 0.5rem;
     padding: 0.7rem 1.2rem;
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.17rem;
     margin: 0;
     max-width: 350px;
     text-align: center;
@@ -592,8 +595,10 @@ main li {
     }
 
     .home-intro h2 {
-        padding: 1rem 8%;
-        font-size: 1.8rem;
+        padding: 0.5rem;
+        font-size: 1.9rem;
+        text-align: start;
+        margin-left: -11%;
     }
 
     .home-intro h3 {
@@ -601,16 +606,23 @@ main li {
     }
 
     .home-intro p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        margin: -0.3rem;
     }
 
     .home-intro li {
+        margin-top: 1rem;
+        margin-left: 0;
+        font-size: 0.7rem;
+    }
 
-        font-size: 1rem;
+    .imagem-home {
+        margin-left: -5.5rem;
     }
 
     .imagem-home img {
         height: 20rem;
+        max-width: 200px;
     }
 
     main {
@@ -637,6 +649,12 @@ main li {
         margin: 2rem;
     }
 
+    .main-wrapper {
+        gap: 1rem;
+        margin: 1rem 0;
+        padding: 1rem 2rem;
+    }
+
     .consultoria-assessoria {
         flex-direction: column;
         align-items: center;
@@ -655,9 +673,7 @@ main li {
         justify-content: space-evenly;
     }
 
-    .consultoria-assessoria h3 {
-        font-size: 2rem;
-    }
+
 
     .assessoria {
         height: 11.7rem;
@@ -680,7 +696,7 @@ main li {
     }
 
     .imagem img {
-        width: 100%;
+        width: 90%;
         max-width: 100vw;
         margin: 0.5rem auto;
         box-sizing: border-box;
@@ -695,7 +711,7 @@ main li {
         justify-content: flex-start;
         align-items: center;
         height: 45rem;
-        max-height: 30rem;
+        max-height: 40rem;
 
     }
 
@@ -729,10 +745,28 @@ main li {
         max-width: 100vw;
     }
 
+    .consultoria h3,
+    .assessoria h3,
     .auditoria h3,
     .documentacao h3,
-    .treinamentos h3 {
-        font-size: 1.1rem;
+    #treinamentos {
+        font-size: 1rem;
+    }
+
+    .auditoria ul,
+    .documentacao li,
+    .auditoria li {
+        font-size: 1rem;
+    }
+
+    .treinamentos p {
+        margin: 0.5rem 0 0 0;
+        font-size: 1rem;
+        text-align: left;
+        width: 100%;
+        padding: 1rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .imagem {
@@ -747,15 +781,14 @@ main li {
         height: auto;
         width: 100%;
         margin: 0.5rem 0.5rem auto;
-        margin: 0.5rem 0 0.5rem 0;
-        padding: 0;
         max-width: 100vw;
     }
 
     .imagem-lateral img {
         max-width: 100vw;
         width: 100%;
-        padding: 0.5rem;
+        padding: 1rem;
+        gap: 2rem;
         margin: 0 auto;
     }
 
@@ -768,5 +801,11 @@ main li {
     .container li {
         flex: 1 1 100%;
         text-align: start;
+    }
+
+    .container {}
+
+    .main-wrapper h2 {
+        font-size: 2rem;
     }
 }
