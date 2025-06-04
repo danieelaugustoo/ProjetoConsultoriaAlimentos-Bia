@@ -28,15 +28,15 @@ body {
 }
 
 body {
-    font-family: 'Montserrat';
+    font-family: 'Inter', 'Montserrat';
     background-color: #f4f4f4;
 
 }
 
 header img {
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     margin: 0 20px;
 }
 
@@ -45,7 +45,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 120px;
     margin: 0;
     padding: 1rem;
     display: flex;
@@ -62,7 +62,7 @@ header {
 }
 
 .cabecalho h1 {
-    font-size: 1.7vh;
+    font-size: 1.9vh;
     margin: 0;
     gap: 1rem;
 }
@@ -137,11 +137,13 @@ section ul {
 }
 
 .home-container {
+    background: rgb(119, 139, 108);
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 1.8px;
+    border-radius: 8px;
     padding: 1.35rem;
 
 }
@@ -182,7 +184,327 @@ main li {
     color: #ffffff;
 }
 
+/*Quem sou eu*/
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background: rgb(119, 139, 108);
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+}
 
+.main-wrapper a {
+    margin: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: white;
+}
+
+.main-wrapper h2 {
+    font-size: 2.5rem;
+}
+
+.main-wrapper a:hover {
+    text-decoration: underline;
+}
+
+
+.imagem-lateral {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 60%;
+    height: 300px;
+    border-radius: 2rem;
+    margin-left: -1rem;
+    margin-top: 4rem;
+
+
+}
+
+.imagem-lateral img {
+    margin: 2rem;
+
+    gap: 1rem;
+    padding: 2rem;
+    max-width: 50%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: auto;
+    display: block;
+}
+
+.sobre {
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+}
+
+.container ul,
+
+
+.container li {
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    color: white;
+    text-align: start;
+}
+
+
+/*Soluções*/
+
+.imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    margin-left: 0;
+    box-sizing: border-box;
+}
+
+.imagem img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 2rem auto;
+    box-sizing: border-box;
+}
+
+.servicos h1 {
+    text-align: start;
+    font-size: 2.5rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.servicos {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 2rem;
+    background: rgb(119, 139, 108);
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.servicos img {
+    margin-top: 0.75rem;
+}
+
+
+
+.servicos li {
+    margin: -1.3rem;
+    list-style: none;
+    font-size: 1.17rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    color: white;
+    flex: 1 1 100%;
+    text-align: start;
+}
+
+.servicos p {
+    font-size: 1.17rem;
+    margin: 0.5rem 0;
+    text-align: start;
+}
+
+.atuacao li {
+    margin-top: 0.2rem;
+}
+
+.consultoria-assessoria {
+    display: flex;
+    padding: 2rem;
+    width: 100%;
+    height: 12.8rem;
+    align-items: center;
+
+    justify-content: space-between;
+    gap: 2rem;
+
+}
+
+.consultoria,
+.assessoria {
+    text-align: center;
+    border-radius: 8px;
+    width: 50%;
+    height: 12.5rem;
+    background-color: rgb(78, 91, 71);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+}
+
+.consultoria-assessoria h3 {
+    gap: 1rem;
+    text-align: start;
+    font-size: 2rem;
+}
+
+.consultoria p,
+.assessoria ul {
+    margin: 1rem;
+    text-align: center;
+
+}
+
+.assessoria p {
+    margin: 1rem;
+
+    margin-bottom: 1rem;
+}
+
+
+.auditoria-documentacao-treinamentos {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    width: 100%;
+    min-height: 24rem;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+.consultoria,
+.assessoria,
+.auditoria,
+.documentacao,
+.treinamentos {
+    background-color: rgb(78, 91, 71);
+    border-radius: 8px;
+    flex: 1 1 300px;
+    min-width: 260px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 1.5rem 1rem;
+    margin: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.auditoria h3,
+.documentacao h3,
+#treinamentos {
+    margin: 0 0 1rem 0;
+    text-align: center;
+    width: 100%;
+    font-size: 2.3rem;
+    font-weight: bold;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+
+.documentacao ul,
+.auditoria p,
+.documentacao p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+    text-align: left;
+    width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.auditoria ul,
+.auditoria li {
+    font-size: 1.5rem;
+}
+
+.treinamentos p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.5rem;
+    text-align: left;
+    width: 100%;
+    padding: 1rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.atuacao {
+    margin: 2rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    width: 96.5%;
+    background-color: rgb(78, 91, 71);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.atuacao h2 {
+    margin: 0 1 1.5rem 0;
+    text-align: start;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.atuacao ul {
+    margin-top: 1rem;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+    padding: 0;
+}
+
+.atuacao li {
+
+    border-radius: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0;
+    max-width: 350px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.servicos>.imagem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 .contato-info {
     padding: 1.25rem;
@@ -250,10 +572,7 @@ main li {
 
 @media screen and (max-width: 1024px) {
 
-    .tirar-mobile {
-        display: none;
 
-    }
 
     header {
         display: flex;
@@ -262,40 +581,41 @@ main li {
 
     }
 
-    .menu a .cabecalho a,
+    .cabecalho a,
     .cabecalho h1 {
         flex-direction: column;
         align-items: center;
     }
 
-    .menu {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        gap: 1rem;
-    }
     .home-intro {
         gap: 0.5rem;
     }
+
     .home-intro h2 {
         padding: 1rem 8%;
         font-size: 1.8rem;
     }
+
     .home-intro h3 {
         font-size: 1.5rem;
     }
+
     .home-intro p {
         font-size: 1.2rem;
     }
+
     .home-intro li {
 
         font-size: 1rem;
     }
+
     .imagem-home img {
         height: 20rem;
     }
+
     main {
         padding: 0.5rem 1%;
+
     }
 
     .contato-info {
@@ -306,5 +626,147 @@ main li {
 
     .contato-info div {
         flex-direction: row;
+    }
+
+    .servicos,
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 2rem;
+    }
+
+    .consultoria-assessoria {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 1rem 0.2rem;
+        height: auto;
+    }
+
+    .consultoria,
+    .assessoria {
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 1.5rem;
+        height: auto;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .consultoria-assessoria h3 {
+        font-size: 2rem;
+    }
+
+    .assessoria {
+        height: 11.7rem;
+    }
+
+    .servicos>.imagem {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagem {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+        gap: 2rem;
+        width: 100%;
+        max-width: 100vw;
+        margin-left: 0;
+        padding: 0 0.5rem;
+    }
+
+    .imagem img {
+        width: 100%;
+        max-width: 100vw;
+        margin: 0.5rem auto;
+        box-sizing: border-box;
+    }
+
+    .container ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .atuacao {
+        justify-content: flex-start;
+        align-items: center;
+        height: 45rem;
+        max-height: 30rem;
+
+    }
+
+    .atuacao ul {
+        margin: 3rem;
+    }
+
+    .container li {
+        flex: 1 1 100%;
+        text-align: start;
+    }
+
+    .auditoria-documentacao-treinamentos {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.2rem;
+        padding: 1rem 0.2rem;
+        min-height: unset;
+    }
+
+    .auditoria,
+    .documentacao,
+    .treinamentos {
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 1.5rem;
+        height: auto;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1.2rem 0.5rem;
+        max-width: 100vw;
+    }
+
+    .auditoria h3,
+    .documentacao h3,
+    .treinamentos h3 {
+        font-size: 1.1rem;
+    }
+
+    .imagem {
+        margin-top: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagem-lateral {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        margin: 0.5rem 0.5rem auto;
+        margin: 0.5rem 0 0.5rem 0;
+        padding: 0;
+        max-width: 100vw;
+    }
+
+    .imagem-lateral img {
+        max-width: 100vw;
+        width: 100%;
+        padding: 0.5rem;
+        margin: 0 auto;
+    }
+
+
+    .container ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .container li {
+        flex: 1 1 100%;
+        text-align: start;
     }
 }
