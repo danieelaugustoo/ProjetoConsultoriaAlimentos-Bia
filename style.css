@@ -17,18 +17,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    text-decoration: none;
-}
-
-html,
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 body {
-    font-family: 'Inter', 'Montserrat';
+    font-family: 'Montserrat';
     background-color: #f4f4f4;
 
 }
@@ -41,93 +33,113 @@ header img {
 }
 
 header {
-    position: fixed;
+    display: flex;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    height: 120px;
-    margin: 0;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: auto;
+    padding: 2rem;
     background: rgb(144, 164, 132);
     color: #ffffff;
-
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url(imagens/7926577.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .cabecalho {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+.cabecalho img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .cabecalho h1 {
-    font-size: 1.9vh;
-    margin: 0;
-    gap: 1rem;
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.cabecalho h2 {
+    margin-top: 1rem;
+    font-size: 1.7rem;
+
+    color: #f4f4f4;
+
+}
+
+.cabecalho div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cabecalho a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
     color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.menu a {
-    margin-right: 40px;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 20px;
+.cabecalho a:hover {
+    color: #dfe8d3;
+    text-decoration: underline;
 }
+
 
 .bolder {
     font-weight: bold;
 }
 
 main {
-    margin: 12rem 2rem 6rem;
-    padding: 1rem;
-    background: rgb(132, 154, 120);
-    border-radius: 0.5rem;
-    flex: 1 0 auto;
-    color: white;
-}
-
-
-
-main>section {
-    margin: 1rem;
+    color: rgb(0, 0, 0);
 }
 
 .home-intro {
-    padding: 1rem;
+    height: 400px;
     display: flex;
     flex-direction: column;
-    align-items: start;
     justify-content: center;
     text-align: start;
     margin-top: 1rem;
 }
 
 .home-intro h2 {
+    align-self: center;
     margin: 1rem 1rem 1rem 0.5rem;
-    font-size: 2.3rem;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    text-align: start;
-}
 
-.home-intro h3 {
-    margin: 1rem 1rem 1rem 0.5rem;
-    font-size: 1.8rem;
     gap: 0.5rem;
+    width: 50%;
     margin-bottom: 0.5rem;
-    text-align: start;
 }
 
 .home-intro p {
-    margin: 0.5rem 1rem;
+    margin: 2rem 1rem;
     font-size: 1.5rem;
-    text-align: start;
+    text-align: center;
+    align-self: center;
+    width: 50%;
+}
+
+.home-intro hr {
+    width: 40%;
+    color: black;
+
+    font-weight: bold;
+    align-self: center;
 }
 
 section ul {
@@ -137,62 +149,28 @@ section ul {
 }
 
 .home-container {
-    background: rgb(119, 139, 108);
+    height: 430px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 1.8px;
-    border-radius: 8px;
-    padding: 1.35rem;
-
-}
-
-.home-textos {
-    flex: 1.5;
-    min-width: 300px;
-}
-
-
-.imagem-home {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.35px;
-}
-
-.imagem-home img {
-    max-width: 100%;
-    height: 46rem;
-    border-radius: 8px;
-}
-
-
-
-
-main p {
-    text-align: start;
-
+    width: 100%;
 }
 
 main li {
     text-align: center;
     margin: 2.2rem;
     text-decoration: none;
-    color: #ffffff;
+
 }
 
 /*Quem sou eu*/
 .main-wrapper {
     display: flex;
     justify-content: space-between;
-    background: rgb(119, 139, 108);
     align-items: center;
     width: 100%;
     margin: 1rem 0;
-    padding: 1rem 2rem;
     flex-wrap: wrap;
     box-sizing: border-box;
     border-radius: 0.5rem;
@@ -202,7 +180,7 @@ main li {
     margin: 1rem;
     font-size: 1.25rem;
     text-decoration: none;
-    color: white;
+
 }
 
 .main-wrapper h2 {
@@ -213,29 +191,8 @@ main li {
     text-decoration: underline;
 }
 
-
-.imagem-lateral {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 60%;
-    height: 300px;
-    border-radius: 2rem;
-    margin-left: -1rem;
-    margin-top: 4rem;
-
-
-}
-
-.imagem-lateral img {
-    margin: 2rem;
-    gap: 1rem;
-    padding: 2rem;
-    max-width: 50%;
-    box-sizing: border-box;
-    border-radius: 8px;
-    height: auto;
-    display: block;
+.subtitulo {
+    font-size: 2.3rem;
 }
 
 .sobre {
@@ -259,254 +216,144 @@ main li {
 .container li {
     font-size: 1.1rem;
     border-radius: 0.5rem;
-    color: white;
     text-align: start;
 }
 
 
 /*Soluções*/
 
-.imagem {
+.mosaico {
+    background-color: rgb(136, 154, 123);
+    width: 100%;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mosaico h2 {
+    margin-top: 1.5rem;
+    font-size: 2.3rem;
+    text-align: center;
+    color: white;
+}
+
+.juncaomosaico,
+.juncao-mosaico {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.juncao-mosaico>.mosaico-item,
+.juncaomosaico>.mosaico-item,
+.mosaico-item {
+    background-color: #f6f8f4;
+    border: 1px solid #d4dcd2;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(72, 94, 70, 0.525);
+    padding: 1.5rem;
+    flex: 1 1 0%;
+    box-sizing: border-box;
+    min-width: 280px;
+    max-width: 100%;
+
+    margin-top: 2rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
+}
+
+.mosaico-item h3,
+.mosaico-item h4,
+.mosaico-item p,
+.mosaico-item ul,
+.mosaico-item li {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.mosaico h3 {
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.mosaico p,
+.mosaico ul {
+    color: #6c7c66;
+}
+
+.mosaico-item.full {
+    flex: 1 1 100%;
+}
+
+.mosaico-item h3 {
+    color: #5f7454;
+    margin-bottom: 0.8rem;
+}
+
+.mosaico-item h4 {
+    font-size: 1.1rem;
+    color: #3d4737;
+    margin-top: 1rem;
+}
+
+.mosaico-item ul {
+    padding-left: 1.2rem;
+    list-style-type: disc;
+}
+
+.mosaico-item li {
+    margin-bottom: 0.4rem;
+}
+
+.destaque {
+    font-weight: bold;
+    color: #41503b;
+    margin-top: 1rem;
+}
+
+/*SOBRE*/
+.sobre {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 1rem;
-    margin-left: 0;
-    box-sizing: border-box;
+    padding: 3rem 1.5rem;
+    background-color: #8a9b7e;
+    box-shadow: 0 2px 3px solid #5f7454;
 }
 
-.imagem img {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 0.5rem;
-    margin: 2rem auto;
-    box-sizing: border-box;
+.sobre .container {
+    max-width: 960px;
+    margin: 0 auto;
 }
 
-.servicos h1 {
-    text-align: start;
-    font-size: 2.5rem;
-    margin: 1rem;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.servicos {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-between;
-    gap: 2rem;
-    background: rgb(119, 139, 108);
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.servicos img {
-    margin-top: 0.75rem;
-}
-
-
-
-.servicos li {
-    margin: -1.3rem;
-    list-style: none;
-    font-size: 1.17rem;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    color: white;
-    flex: 1 1 100%;
-    text-align: start;
-}
-
-.servicos p {
-    font-size: 1.17rem;
-    margin: 0.5rem 0;
-    text-align: start;
-}
-
-.atuacao li {
-    margin-top: 0.2rem;
-}
-
-.consultoria-assessoria {
-    display: flex;
-    padding: 2rem;
-    width: 100%;
-    height: 12.8rem;
-    align-items: center;
-
-    justify-content: space-between;
-    gap: 2rem;
-
-}
-
-.consultoria,
-.assessoria {
-    text-align: center;
-    border-radius: 8px;
-    width: 50%;
-    height: 12.5rem;
-    background-color: rgb(78, 91, 71);
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-around;
-}
-
-.consultoria-assessoria h3 {
-    gap: 1rem;
-    text-align: start;
+.sobre h2.subtitulo {
     font-size: 2rem;
-}
-
-.consultoria p,
-.assessoria ul {
-    margin: 1rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
     text-align: center;
-
+  
 }
 
-.assessoria p {
-    margin: 1rem;
+.sobre ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
 
+.sobre li {
+    color: #e8ffdb;
     margin-bottom: 1rem;
-}
-
-
-.auditoria-documentacao-treinamentos {
-    margin-top: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2rem;
-    width: 100%;
-    min-height: 24rem;
-    align-items: stretch;
-    justify-content: space-between;
-    gap: 2rem;
-    box-sizing: border-box;
-}
-
-.consultoria,
-.assessoria,
-.auditoria,
-.documentacao,
-.treinamentos {
-    background-color: rgb(78, 91, 71);
-    border-radius: 8px;
-    flex: 1 1 300px;
-    min-width: 260px;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    padding: 1.5rem 1rem;
-    margin: 0;
-    word-break: break-word;
-    overflow-wrap: break-word;
-}
-
-.auditoria h3,
-.documentacao h3,
-#treinamentos {
-    margin: 0 0 1rem 0;
-    text-align: center;
-    width: 100%;
-    font-size: 2.3rem;
-    font-weight: bold;
-    word-break: break-word;
-    overflow-wrap: break-word;
-}
-.treinamentos h4 {
-    font-size: 1.9rem;
-
-}
-
-
-.documentacao ul,
-.auditoria p,
-.documentacao p {
-    margin: 0.5rem 0 0 0;
-    font-size: 1rem;
-    text-align: left;
-    width: 100%;
-    word-break: break-word;
-    overflow-wrap: break-word;
-}
-
-.auditoria ul,
-.documentacao li,
-.auditoria li {
-    font-size: 1.5rem;
-}
-
-.treinamentos p {
-    margin: 0.5rem 0 0 0;
-    font-size: 1.5rem;
-    text-align: left;
-    width: 100%;
-    padding: 1rem;
-    word-break: break-word;
-    overflow-wrap: break-word;
-}
-
-.atuacao {
-    margin: 2rem 2rem;
-    text-align: center;
-    border-radius: 8px;
-    width: 96.5%;
-    background-color: rgb(78, 91, 71);
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: flex-start;
-    padding: 2rem 1.5rem;
-    box-sizing: border-box;
-}
-
-.atuacao h2 {
-    margin: 0 1 1.5rem 0;
-    text-align: start;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.atuacao ul {
-    margin-top: 1rem;
-    text-align: left;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.7rem;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 120px;
-    width: 100%;
-    padding: 0;
-}
-
-.atuacao li {
-
-    border-radius: 0.5rem;
-    padding: 0.7rem 1.2rem;
-    color: #fff;
-    font-size: 1.17rem;
-    margin: 0;
-    max-width: 350px;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.servicos>.imagem {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    line-height: 1.6;
+    font-size: 1.3rem;
 }
 
 .contato-info {
@@ -523,7 +370,39 @@ main li {
     bottom: 0;
 }
 
+.galeria-mosaico {
+    padding: 2rem 1rem;
+    background-color: #f6f8f4;
+}
 
+.subtitulo {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #5f7454;
+    text-align: center;
+}
+
+.mosaico-imagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.mosaico-imagens img {
+    width: calc(33.333% - 1rem);
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.mosaico-imagens img:hover {
+    transform: scale(1.03);
+}
+
+/* FOOTER */
 .contato-info p,
 .contato-info a {
     font-size: 0.7rem;
@@ -571,241 +450,4 @@ main li {
 
 .contato-info a:hover {
     text-decoration: underline;
-}
-
-@media screen and (max-width: 1024px) {
-
-
-
-    header {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-
-    }
-
-    .cabecalho a,
-    .cabecalho h1 {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .home-intro {
-        gap: 0.5rem;
-    }
-
-    .home-intro h2 {
-        padding: 0.5rem;
-        font-size: 1.9rem;
-        text-align: start;
-        margin-left: -11%;
-    }
-
-    .home-intro h3 {
-        font-size: 1.5rem;
-    }
-
-    .home-intro p {
-        font-size: 1rem;
-        margin: -0.3rem;
-    }
-
-    .home-intro li {
-        margin-top: 1rem;
-        margin-left: 0;
-        font-size: 0.7rem;
-    }
-
-    .imagem-home {
-        margin-left: -5.5rem;
-    }
-
-    .imagem-home img {
-        height: 20rem;
-        max-width: 200px;
-    }
-
-    main {
-        padding: 0.5rem 1%;
-
-    }
-
-    .contato-info {
-        padding: 1rem;
-        gap: 1rem;
-        flex-direction: column;
-    }
-
-    .contato-info div {
-        flex-direction: row;
-    }
-
-    .servicos,
-    .home-container {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        margin: 2rem;
-    }
-
-    .main-wrapper {
-        gap: 1rem;
-        margin: 1rem 0;
-        padding: 1rem 2rem;
-    }
-
-    .consultoria-assessoria {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.2rem;
-        padding: 1rem 0.2rem;
-        height: auto;
-    }
-
-    .consultoria,
-    .assessoria {
-        width: 100%;
-        min-width: 0;
-        margin-bottom: 1.5rem;
-        height: auto;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-
-
-
-    .assessoria {
-        height: 11.7rem;
-    }
-
-    .servicos>.imagem {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .imagem {
-        flex-direction: column;
-        text-align: center;
-        margin-top: 1rem;
-        gap: 2rem;
-        width: 100%;
-        max-width: 100vw;
-        margin-left: 0;
-        padding: 0 0.5rem;
-    }
-
-    .imagem img {
-        width: 90%;
-        max-width: 100vw;
-        margin: 0.5rem auto;
-        box-sizing: border-box;
-    }
-
-    .container ul {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .atuacao {
-        justify-content: flex-start;
-        align-items: center;
-        height: 45rem;
-        max-height: 40rem;
-
-    }
-
-    .atuacao ul {
-        margin: 3rem;
-    }
-
-    .container li {
-        flex: 1 1 100%;
-        text-align: start;
-    }
-
-    .auditoria-documentacao-treinamentos {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1.2rem;
-        padding: 1rem 0.2rem;
-        min-height: unset;
-    }
-
-    .auditoria,
-    .documentacao,
-    .treinamentos {
-        width: 100%;
-        min-width: 0;
-        margin-bottom: 1.5rem;
-        height: auto;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 1.2rem 0.5rem;
-        max-width: 100vw;
-    }
-
-    .consultoria h3,
-    .assessoria h3,
-    .auditoria h3,
-    .documentacao h3,
-    #treinamentos {
-        font-size: 1rem;
-    }
-
-    .auditoria ul,
-    .documentacao li,
-    .auditoria li {
-        font-size: 1rem;
-    }
-
-    .treinamentos p {
-        margin: 0.5rem 0 0 0;
-        font-size: 1rem;
-        text-align: left;
-        width: 100%;
-        padding: 1rem;
-        word-break: break-word;
-        overflow-wrap: break-word;
-    }
-
-    .imagem {
-        margin-top: 1rem;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .imagem-lateral {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        width: 100%;
-        margin: 0.5rem 0.5rem auto;
-        max-width: 100vw;
-    }
-
-    .imagem-lateral img {
-        max-width: 100vw;
-        width: 100%;
-        padding: 1rem;
-        gap: 2rem;
-        margin: 0 auto;
-    }
-
-
-    .container ul {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .container li {
-        flex: 1 1 100%;
-        text-align: start;
-    }
-
-    .container {}
-
-    .main-wrapper h2 {
-        font-size: 2rem;
-    }
 }
