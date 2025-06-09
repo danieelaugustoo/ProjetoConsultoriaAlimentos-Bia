@@ -1,17 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@100..900&display=swap');
 
 
-@font-face {
-    font-family: 'Inter', 'Montserrat';
 
-    src:
-        url("Inter,Montserrat/Inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype"),
-        url("Inter,Montserrat/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype"),
-        url("Inter,Montserrat/Montserrat/Montserrat-Italic-VariableFont_wght.ttf") format("truetype"),
-        url("Inter,Montserrat/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
-    font-weight: normal;
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter,Montserrat/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter,Montserrat/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Inter,Montserrat/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Inter,Montserrat/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+}
+
 
 * {
     box-sizing: border-box;
@@ -22,7 +36,6 @@
 body {
     font-family: 'Montserrat';
     background-color: #f4f4f4;
-
 }
 
 header img {
@@ -73,9 +86,7 @@ header {
 .cabecalho h2 {
     margin-top: 1rem;
     font-size: 1.7rem;
-
     color: #f4f4f4;
-
 }
 
 .cabecalho div {
@@ -99,7 +110,6 @@ header {
     text-decoration: underline;
 }
 
-
 .bolder {
     font-weight: bold;
 }
@@ -120,7 +130,6 @@ main {
 .home-intro h2 {
     align-self: center;
     margin: 1rem 1rem 1rem 0.5rem;
-
     gap: 0.5rem;
     width: 50%;
     margin-bottom: 0.5rem;
@@ -137,7 +146,6 @@ main {
 .home-intro hr {
     width: 40%;
     color: black;
-
     font-weight: bold;
     align-self: center;
 }
@@ -145,7 +153,6 @@ main {
 section ul {
     text-align: start;
     list-style-type: disc;
-
 }
 
 .home-container {
@@ -161,10 +168,8 @@ main li {
     text-align: center;
     margin: 2.2rem;
     text-decoration: none;
-
 }
 
-/*Quem sou eu*/
 .main-wrapper {
     display: flex;
     justify-content: space-between;
@@ -180,7 +185,6 @@ main li {
     margin: 1rem;
     font-size: 1.25rem;
     text-decoration: none;
-
 }
 
 .main-wrapper h2 {
@@ -200,6 +204,12 @@ main li {
     margin: 1rem 0;
     width: 100%;
     height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    background-color: #8a9b7e;
+    box-shadow: 0 2px 3px solid #5f7454;
 }
 
 .container {
@@ -212,22 +222,10 @@ main li {
 }
 
 .container ul,
-
-
 .container li {
     font-size: 1.1rem;
     border-radius: 0.5rem;
     text-align: start;
-}
-
-.sobre {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 3rem 1.5rem;
-    background-color: #8a9b7e;
-    box-shadow: 0 2px 3px solid #5f7454;
 }
 
 .sobre .container {
@@ -240,7 +238,6 @@ main li {
     color: #ffffff;
     margin-bottom: 1.5rem;
     text-align: center;
-
 }
 
 .sobre ul {
@@ -255,8 +252,6 @@ main li {
     font-size: 1.3rem;
 }
 
-
-
 .subtitulo {
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -268,7 +263,7 @@ main li {
     width: 100%;
     display: flex;
     justify-content: center;
-
+    flex-direction: column;
 }
 
 .galeria-mosaico {
@@ -282,62 +277,40 @@ main li {
         'fourth-image third-image';
     justify-content: stretch;
     gap: 0.5rem;
-
 }
 
 .first-image {
     grid-area: first-image;
 }
 
-.first-image img {
-    width: 100%;
-}
-
 .second-image {
     grid-area: second-image;
-
 }
-
-.second-image img {
-    width: 100%;
-}
-
 
 .third-image {
     grid-area: third-image;
-
 }
-
-.third-image img {
-    width: 100%;
-    height: 100%;
-}
-
 
 .fourth-image {
     grid-area: fourth-image;
 }
 
+.galeria-mosaico img,
+.first-image img,
+.second-image img,
+.third-image img,
 .fourth-image img {
     width: 100%;
-}
-
-
-
-.mosaico-imagens img {
-
+    height: auto;
     object-fit: cover;
     border-radius: 0.5rem;
+    max-height: 350px;
 }
 
 .mosaico-imagens img:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
-
-
-
-/*Soluções*/
 
 .servicos {
     background-color: rgb(136, 154, 123);
@@ -356,24 +329,28 @@ main li {
     color: white;
 }
 
-.consultoria {
-    position: relative;
-    height: 400px;
-
-}
-
-.cons-image {
-    right: 17rem;
-    position: relative;
-}
-
-.cons-image img {
-    width: 1000px;
-    height: 550px;
+.cons-image img,
+.advi-image img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
     display: block;
 }
 
-.cons-text {
+.consultoria,
+.assessoria {
+    position: relative;
+    height: 400px;
+    margin-top: 5rem;
+}
+
+.cons-image,
+.advi-image {
+    position: relative;
+}
+
+.cons-text,
+.advi-text {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -384,80 +361,30 @@ main li {
     padding: 1.5rem;
     background-color: white;
     z-index: 10;
-    display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.cons-text h3 {
-    color: #5f7454;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.cons-text p {
-    font-size: 1rem;
-    color: #333;
-}
-
-.cons-text > div a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    background-color: #8a9b7e;
-    border-radius: 50px;
-    padding: 0.7rem 1.5rem;
-    font-weight: bold;
-    width: fit-content;
-}
-/**/
-.assessoria {
-    position: relative;
-    height: 400px;
-    margin-top: 5rem;
-}
-
-.advi-image {
-    left: 17rem;
-    position: relative;
-}
-
-.advi-image img {
-    width: 1000px;
-    height: 550px;
-    display: block;
 }
 
 .advi-text {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 8.5rem;
     right: 43rem;
-    width: 30%;
-    height: 70%;
-    padding: 1.5rem;
-    background-color: white;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    left: auto;
 }
 
+.cons-text h3,
 .advi-text h3 {
     color: #5f7454;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
+.cons-text p,
 .advi-text p {
     font-size: 1rem;
     color: #333;
 }
 
-.advi-text > div a {
+.cons-text>div a,
+.advi-text>div a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -469,9 +396,7 @@ main li {
     font-weight: bold;
     width: fit-content;
 }
-/**/
 
-/* FOOTER */
 .contato-info {
     padding: 1.25rem;
     background-color: rgb(144, 164, 132);
@@ -506,7 +431,6 @@ main li {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .contato-info img {
@@ -517,10 +441,7 @@ main li {
     filter: brightness(1) invert(1);
 }
 
-.instagram img {
-    filter: brightness(1) invert(0);
-}
-
+.instagram img,
 .linkedin img {
     filter: brightness(1) invert(0);
 }
@@ -556,9 +477,7 @@ main li {
             'first-image'
             'second-image'
             'third-image'
-            'fourth-image'
-            'fifth-image'
-            'sixth-image';
+            'fourth-image';
     }
 
     .juncaomosaico,
@@ -566,7 +485,6 @@ main li {
         justify-content: center;
     }
 }
-
 
 @media (max-width: 768px) {
     header {
@@ -614,9 +532,35 @@ main li {
     }
 
     .galeria-mosaico img {
-        object-fit: cover;
-        width: 330px;
-        height: 330px;
+        width: 100%;
+        height: auto;
+        max-height: 350px;
+    }
+
+    .consultoria,
+    .assessoria {
+        flex-direction: column;
+        height: auto;
+        position: static;
+        margin-top: 2rem;
+    }
+
+    .cons-text,
+    .advi-text {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        background-color: white;
+        margin-top: 1rem;
+        box-shadow: none;
+    }
+
+    .cons-image,
+    .advi-image {
+        position: static;
+        width: 100%;
+        text-align: center;
     }
 
     .mosaico {
