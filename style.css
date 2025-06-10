@@ -35,6 +35,7 @@
 
 body {
     font-family: 'Montserrat';
+    font-weight: 300;
     background-color: #f4f4f4;
 }
 
@@ -123,28 +124,30 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: start;
     margin-top: 1rem;
 }
+
 
 .home-intro h2 {
     align-self: center;
     margin: 1rem 1rem 1rem 0.5rem;
     gap: 0.5rem;
-    width: 50%;
+    width: 40%;
+    color: #5f7454;
     margin-bottom: 0.5rem;
 }
 
 .home-intro p {
-    margin: 2rem 1rem;
-    font-size: 1.5rem;
-    text-align: center;
+    margin: 2rem 3rem;
+    font-size: 1rem;
     align-self: center;
-    width: 50%;
+    overflow-wrap: break-word;
+    text-align: justify;
+    width: 40%;
 }
 
 .home-intro hr {
-    width: 40%;
+    width: 20%;
     color: black;
     font-weight: bold;
     align-self: center;
@@ -197,6 +200,7 @@ main li {
 
 .subtitulo {
     font-size: 2.3rem;
+    color: white;
 }
 
 .sobre {
@@ -214,7 +218,7 @@ main li {
 
 .container {
     display: flex;
-    flex-direction: column;
+
     align-items: flex-start;
     padding: 1.25rem;
     width: 50%;
@@ -223,8 +227,10 @@ main li {
 
 .container ul,
 .container li {
+    display: flex;
     font-size: 1.1rem;
     border-radius: 0.5rem;
+    flex-direction: row wrap;
     text-align: start;
 }
 
@@ -255,10 +261,135 @@ main li {
 .subtitulo {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #5f7454;
-    text-align: center;
+    color: white;
+
 }
 
+.sub-servicos {
+    margin-top: 4rem;
+    width: 100%;
+    padding: 1rem 1rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sub-servicos-item {
+    display: flex;
+    flex-direction: row wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.sub-servicos-texto {
+    width: 50%;
+}
+
+.sub-servicos h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.sub-servicos p {
+    font-size: 1.2rem;
+    color: white;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.sub-servicos a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: white;
+    color: #8a9b7e;
+    border-radius: 50px;
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+}
+
+.sub-servicos a:hover {
+    text-decoration: underline;
+}
+
+.sub-servicos-image {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.sub-servicos-image img {
+    width: 100%;
+    max-width: 700px;
+    height: 390px;
+    border-radius: 0.5rem;
+}
+
+.areas-atuacao {
+    margin-top: -7rem;
+    width: 100%;
+    padding: 1rem 1rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.atuacao-item {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 2rem;
+    /* flex-wrap: wrap; */
+}
+
+.atuacao-image {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.atuacao-image img {
+    width: 100%;
+    max-width: 700px;
+    height: 350px;
+    border-radius: 0.5rem;
+}
+
+.atuacao-texto {
+    width: 50%;
+    height: 100%;
+}
+
+.atuacao-texto h3 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.atuacao-texto p {
+    font-size: 1.2rem;
+    color: white;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.atuacao-texto a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: white;
+    color: #8a9b7e;
+    border-radius: 50px;
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+}
+
+.atuacao-texto a:hover {
+    text-decoration: underline;
+}
 .mosaico-imagens {
     width: 100%;
     display: flex;
@@ -325,6 +456,7 @@ main li {
 .servicos h2 {
     margin-top: 1.5rem;
     font-size: 2.3rem;
+    width: 30%;
     text-align: center;
     color: white;
 }
@@ -332,16 +464,24 @@ main li {
 .cons-image img,
 .advi-image img {
     width: 100%;
-    max-width: 1000px;
+    max-width: 800px;
     height: auto;
     display: block;
+}
+
+.cons-image {
+    right: 6rem;
+}
+
+.advi-image {
+    left: 6rem;
 }
 
 .consultoria,
 .assessoria {
     position: relative;
     height: 400px;
-    margin-top: 5rem;
+
 }
 
 .cons-image,
@@ -354,10 +494,8 @@ main li {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 8.5rem;
-    left: 43rem;
     width: 30%;
-    height: 70%;
+    height: 60%;
     padding: 1.5rem;
     background-color: white;
     z-index: 10;
@@ -365,8 +503,21 @@ main li {
     gap: 1rem;
 }
 
+.cons-text {
+    top: 6.5rem;
+    right: auto;
+    left: 40rem;
+}
+
+.cons-text p,
+.advi-text p {
+    overflow-wrap: break-word;
+    text-align: justify;
+}
+
 .advi-text {
-    right: 43rem;
+    top: 10rem;
+    right: 40rem;
     left: auto;
 }
 
@@ -389,12 +540,13 @@ main li {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: white;
     background-color: #8a9b7e;
+    color: white;
     border-radius: 50px;
     padding: 0.7rem 1.5rem;
     font-weight: bold;
     width: fit-content;
+
 }
 
 .contato-info {
