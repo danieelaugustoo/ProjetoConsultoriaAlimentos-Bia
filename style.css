@@ -39,47 +39,47 @@ body {
 }
 
 header {
-  width: 100%;
-  padding: 2rem 1rem;
-  background: rgb(144, 164, 132);
-  color: #ffffff;
+    width: 100%;
+    padding: 2rem 1rem;
+    background: rgb(144, 164, 132);
+    color: #ffffff;
 }
 
 .cabecalho {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .cabecalho img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .texto-cabecalho {
-  text-align: center;
+    text-align: center;
 }
 
 .texto-cabecalho h1 {
-  font-size: 2.2rem;
-  margin: 0;
-  font-weight: bold;
-  text-transform: uppercase;
+    font-size: 2.2rem;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .texto-cabecalho h2 {
-  font-size: 1.4rem;
-  margin-top: 0.5rem;
-  color: #f4f4f4;
-  font-weight: 400;
-  font-style: italic;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+    color: #f4f4f4;
+    font-weight: 400;
+    font-style: italic;
 }
 
 
@@ -142,8 +142,6 @@ main li {
     margin: 2.2rem;
     text-decoration: none;
 }
-
-
 .subtitulo {
     font-size: 2.3rem;
     color: white;
@@ -152,26 +150,25 @@ main li {
 .sobre {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1200px;
-    margin: 3rem auto;
 
+    margin: 2rem auto;
     box-sizing: border-box;
-    gap: 2rem;
+    
 }
 
 .container {
-    width: 50%;
+    width: 100%;
     min-width: 280px;
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     border-radius: 0.5rem;
     box-sizing: border-box;
-    gap: 2rem;
+    gap: 1rem;
     background: none;
     padding: 1.5rem 0;
     margin: 1rem auto;
@@ -198,9 +195,9 @@ main li {
 
 
 .mosaico-imagens {
-    width: 50%;
+    width: 70%;
     min-width: 280px;
-    max-width: 600px;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -458,7 +455,7 @@ main li {
     flex-direction: row;
     align-items: center;
     gap: 3vw;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
 
 }
 
@@ -496,7 +493,7 @@ main li {
 }
 
 .item-zigzag-image {
-    flex: -1;
+    flex: 1;
     display: flex;
     justify-content: center;
 
@@ -569,15 +566,85 @@ main li {
 }
 
 @media (min-width: 1600px) {
-    .sobre {
-        max-width: 100%;
+    .cabecalho {
+        gap: 4rem;
     }
 
-    .container,
-    .mosaico-imagens {
+    .cabecalho img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .texto-cabecalho h1 {
+        font-size: 3rem;
+    }
+
+    .texto-cabecalho h2 {
+        font-size: 1.8rem;
+    }
+
+    .home-intro h2,
+    .home-intro p {
+        width: 50%;
+        font-size: 1.6rem;
+    }
+
+    .container h2 {
+        font-size: 6rem;
+    }
+
+    .container p {
+        font-size: 1.4rem;
+    }
+
+    .train-overlay {
+        width: 35%;
+        margin-right: 6rem;
+    }
+
+    .train-overlay h3 {
+        font-size: 3.5rem;
+    }
+
+    .train-overlay p {
+        font-size: 1.7rem;
+    }
+    
+    .item-zigzag,
+    .item-zigzag-reverse {
+        flex-wrap: nowrap;
+
+        justify-content: space-between;
+    }
+    
+    .item-zigzag-texto {
+        padding: 0;
+        margin: 2rem;
+        width: 50%;
         max-width: 700px;
+        text-align: left;
+    }
+
+    .item-zigzag-texto h1 {
+        font-size: 3.5rem;
+    }
+
+    .item-zigzag-texto p {
+        font-size: 1.6rem;
+    }
+
+    .item-zigzag-image {
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .item-zigzag-image img {
+        padding: 0;
+        width: 100%;
+        height: auto;
     }
 }
+
 
 @media (max-width: 1024px) {
 
@@ -614,23 +681,27 @@ main li {
         padding: 1rem 0.5rem;
 
     }
+
     .cabecalho {
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 1rem;
     }
+
     .cabecalho img {
         align-self: center;
         width: 150px;
         height: 150px;
     }
+
     .esconder {
         display: none;
         overflow: hidden;
         left: 999999999999999999px;
-        
+
     }
+
     .home-container {
         margin: 3rem auto;
         height: 100%;
