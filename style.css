@@ -31,7 +31,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
+
 }
 
 
@@ -149,6 +149,7 @@ main li {
     margin: 2.2rem;
     text-decoration: none;
 }
+
 .subtitulo {
     font-size: 2.3rem;
     color: white;
@@ -160,11 +161,10 @@ main li {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-
-    margin: 2rem 2rem;
+    background-color: rgb(136, 154, 123);
     padding: 3rem;
     box-sizing: border-box;
-    
+
 }
 
 .container {
@@ -184,7 +184,7 @@ main li {
 
 .container p {
     font-size: 1.2rem;
-    color: #3e3e3e;
+    color: rgb(255, 250, 240);
     margin-bottom: 1.5rem;
     text-align: start;
     word-wrap: break-word;
@@ -193,7 +193,7 @@ main li {
 
 .container h2 {
     font-size: 5rem;
-    color: #5f7454;
+    margin-top: 4rem;
     margin-bottom: 1.5rem;
     text-align: start;
     word-wrap: break-word;
@@ -269,7 +269,6 @@ main li {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 4vw 0;
     box-sizing: border-box;
 }
 
@@ -344,8 +343,8 @@ main li {
     flex-direction: column;
     gap: 1vw;
     box-sizing: border-box;
-    top: 6vw;
-    left: 12rem;
+    top: 10vw;
+    left: 24rem;
 
 }
 
@@ -364,6 +363,7 @@ main li {
     gap: 1vw;
     box-sizing: border-box;
     top: 10vw;
+
 }
 
 
@@ -411,7 +411,7 @@ main li {
 .train-overlay {
     width: 40%;
     height: 80%;
-    margin-right: 3rem;
+    margin-left: 5rem;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -449,50 +449,52 @@ main li {
 }
 
 .publico-alvo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
-  width: 100%;
-  margin-top: 10rem;
-  padding: 3rem 1rem;
-  text-align: center;
-  color: #fff;
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+
+    padding: 3rem 1rem;
+    text-align: center;
+    color: #fff;
 }
+
 .publico-alvo h1 {
-  width: 100%;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
+    width: 100%;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
 
 }
 
 .item-publico {
-  max-width: 300px;
-  flex: 1 1 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    max-width: 300px;
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .item-publico img {
-  width: 100px;
-  height: auto;
-  margin-bottom: 1rem;
-  filter: brightness(0) invert(1);
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(1);
 }
 
 .item-publico h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
 }
 
 .item-publico p {
-  font-size: 1rem;
-  line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .contato-info {
@@ -511,7 +513,7 @@ main li {
 
 .contato-info p,
 .contato-info a {
-    font-size: 0.7rem;
+    font-size: 0.95rem;
     margin: 16px 0;
     gap: 3rem;
     color: white;
@@ -521,7 +523,6 @@ main li {
     color: white;
 }
 
-.telefone,
 .email,
 .whatsapp,
 .instagram,
@@ -598,14 +599,14 @@ main li {
     .train-overlay p {
         font-size: 1.7rem;
     }
-    
+
     .item-zigzag,
     .item-zigzag-reverse {
         flex-wrap: nowrap;
 
         justify-content: space-between;
     }
-    
+
     .item-zigzag-texto {
         padding: 0;
         margin: 2rem;
@@ -816,42 +817,47 @@ main li {
 
     .sobre {
         flex-direction: column;
-        padding: 2rem 1rem;
-        width: 100%;
+      
+        gap: 2rem;
     }
 
     .container {
-        width: 100%;
-        padding: 1rem;
+        width: 80%;
+        padding: 1.5rem;
         margin-bottom: 2rem;
     }
 
     .container h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         text-align: center;
     }
 
     .container p {
-        font-size: 1rem;
+        margin: 1rem;
+        width: 90%;
+        font-size: 0.9rem;
         text-align: justify;
     }
 
     .mosaico-imagens {
         width: 100%;
-        padding: 1rem;
+        padding: 2rem;
+
+        margin-left: 0.5rem;
     }
 
     .galeria-mosaico {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 1rem;
+        gap: 3rem;
     }
 
     .galeria-mosaico img {
-        width: 100%;
+        width: 93%;
         height: auto;
         max-height: 200px;
         object-fit: cover;
+        border-radius: 0.5rem;
     }
 
     .contato-info {
@@ -877,7 +883,7 @@ main li {
     }
 
     .train-overlay h3 {
-        font-size: 2.4rem;
+        font-size: 1.8rem;
         width: 100%;
     }
 
@@ -892,7 +898,7 @@ main li {
     .train-overlay p {
         align-self: center;
         text-align: justify;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
 }
@@ -903,7 +909,7 @@ main li {
         align-items: center;
         max-width: 100vw;
         width: 100vw;
-        padding: 0 0.5vw;
+        padding: 2 0.5vw;
         gap: 0.5vw;
     }
 
