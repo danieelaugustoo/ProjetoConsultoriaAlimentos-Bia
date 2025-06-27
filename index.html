@@ -14,18 +14,18 @@
 <body>
     <header>
         <div class="cabecalho">
-            <img src="imagens/logoverde.png" alt="Logo Consultoria" />
-        </div>
-
+            <img src="imagens/logoverde.png" alt="Logo Consultoria">
+            </div>
     </header>
 
     <main>
         <div class="home-container">
             <div class="home-textos">
                 <section class="home-intro">
-                    <h2 class="subtitulo">CONSULTORIA ESPECIALIZADA EM SEGURANÇA E QUALIDADE DE ALIMENTOS</h2>
+                    <h2>CONSULTORIA ESPECIALIZADA EM SEGURANÇA E QUALIDADE DE ALIMENTOS</h2>
                     <hr>
-                    <p>Atendemos indústrias de alimentos e serviços de alimentação, oferecendo um atendimento
+                    <p class="texto-paragrafo">Atendemos indústrias de alimentos e serviços de alimentação, oferecendo
+                        um atendimento
                         personalizado, com soluções especializadas para garantir qualidade e segurança dos alimentos.
                         Com anos de experiência comprovada no setor alimentício e resultados reais, nossa consultoria
                         garante conformidade com a legislação vigente e produtos seguros ao consumidor final.</p>
@@ -37,13 +37,16 @@
         <section class="sobre">
             <div class="container">
                 <h2 class="subtitulo">QUEM SOU EU?</h2>
-                <p>Sou Beatriz Vasconcelos, Tecnóloga em Alimentos com especialização em Qualidade e Segurança. Há 12
+                <p class="texto-paragrafo">Sou Beatriz Vasconcelos, Tecnóloga em Alimentos com especialização em
+                    Qualidade e Segurança. Há 12
                     anos atuo na implantação de sistemas que melhoram a performance industrial.</p>
 
-                <p>Tenho experiência com BPF, HACCP, IFS, ISO 9001, shelf life e gestão da qualidade. Já atendi
+                <p class="texto-paragrafo">Tenho experiência com BPF, HACCP, IFS, ISO 9001, shelf life e gestão da
+                    qualidade. Já atendi
                     panificação, frigoríficos, supermercados e outros segmentos alimentícios.</p>
 
-                <p>Lidero equipes, capacito pessoas e busco sempre transformar desafios em soluções, garantindo produtos
+                <p class="texto-paragrafo">Lidero equipes, capacito pessoas e busco sempre transformar desafios em
+                    soluções, garantindo produtos
                     seguros e a confiança do consumidor.</p>
 
 
@@ -63,42 +66,59 @@
                 </div>
             </section>
         </section>
-        <section id="servicos" class="servicos">
+        <section class="servicos">
             <span class="servicos subtitulo">
-                <h2>SERVIÇOS</h2>
+                <h2>SOLUÇÕES</h2>
             </span>
-            <div class="advi-consul">
-                <div class="consultoria">
-                    <div class="cons-item">
-                        <div class="cons-image"><img src="imagens/top-view-charts-organic-food-lunch-boxes.jpg"
-                                alt="Imagem ilustrativa"></div>
-                        <div class="cons-text">
-                            <h3>CONSULTORIA</h3>
-                            <p>Consultoria especializada, análise detalhada, suporte contínuo e desenvolvimento de
-                                estratégias eficazes.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="assessoria">
-                    <div class="advi-item">
-                        <div class="advi-image">
-                            <img src="imagens/zero-waste-store-vendor-sells-food.jpg" alt="Imagem ilustrativa">
-                        </div>
-                        <div class="advi-text">
-                            <h3>ASSESSORIA</h3>
-                            <p>Visita técnica, relatório de diagnóstico, acompanhamento do andamento do de plano de
-                                ação.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <table class="servicos-tabela interativa">
+                <thead>
+                    <tr>
+                        <th>Serviço</th>
+                        <th 
+                        >Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="linha-servico">
+                        <td class="titulo-servico">Consultoria</td>
+                        <td class="descricao">Visita técnica, relatório de diagnóstico e criação de plano de ação.</td>
+                    </tr>
+                    <tr class="linha-servico">
+                        <td class="titulo-servico">Assessoria</td>
+                        <td class="descricao">Consultoria com acompanhamento da execução do plano de ação.</td>
+                    </tr>
+                    <tr class="linha-servico" >
+                        <td class="titulo-servico">Auditoria</td>
+                        <td class="descricao">
+                            Auditoria de BPF, ISO 9001:2015, 5S, IFS e em fornecedores para homologação.
+                        </td>
+                    </tr>
+                    <tr class="linha-servico" >
+                        <td class="titulo-servico">Documentação</td>
+                        <td class="descricao">
+                            Checklists, POPs, ITs, Fichas Técnicas, APPCC/HACCP e outros documentos de qualidade.
+                        </td>
+                    </tr>
+                    <tr class="linha-servico" >
+                        <td class="titulo-servico">Treinamentos In Company</td>
+                        <td class="descricao">Capacitações presenciais realizadas diretamente na empresa.</td>
+                    </tr>
+                    <tr class="linha-servico" >
+                        <td class="titulo-servico">Cliente Oculto</td>
+                        <td class="descricao">Visita anônima para avaliar o atendimento e a qualidade dos produtos.</td>
+                    </tr>
+                    <tr class="linha-servico" >
+                        <td class="titulo-servico">Shelf Life</td>
+                        <td class="descricao">Estudo técnico para definir o prazo de validade dos produtos.</td>
+                    </tr>
+                </tbody>
+            </table>
             <section class="publico-alvo">
                 <h1>ÁREAS DE ATUAÇÃO</h1>
                 <div class="item-publico">
                     <img src="imagens/fabrica.png" alt="Ícone de Indústrias">
                     <h3>INDÚSTRIAS</h3>
-                    <p>
+                    <p class="texto-paragrafo">
                         Indústrias de alimentos<br>
                         Indústrias em geral (5S e ISO 9001:2015)
                     </p>
@@ -107,7 +127,7 @@
                 <div class="item-publico">
                     <img src="imagens/prato.png" alt="Ícone de Alimentação">
                     <h3>SERVIÇOS DE ALIMENTAÇÃO</h3>
-                    <p>
+                    <p class="texto-paragrafo">
                         Supermercados<br>
                         Padarias<br>
                         Restaurantes<br>
@@ -121,19 +141,11 @@
                 <div class="item-publico">
                     <img src="imagens/pessoas.png" alt="Ícone de Pessoas">
                     <h3>PESSOAS</h3>
-                    <p>Treinamentos</p>
+                    <p class="texto-paragrafo">Treinamentos</p>
                 </div>
             </section>
 
-            <section class="treinamentos">
-                <div class="train-overlay">
-                    <h3>TREINAMENTOS</h3>
-                    <hr>
-                    <p>Capacitações presenciais ou in company, estudos de shelf life e cliente oculto para qualificar
-                        sua equipe e produtos.</p>
-                </div>
-            </section>
-        </section>
+
 
 
 
