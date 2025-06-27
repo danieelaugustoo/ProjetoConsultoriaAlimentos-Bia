@@ -301,9 +301,9 @@ main li {
 .servicos-tabela .titulo-servico {
   font-weight: 600;
   background: #f1f3ef;
-  border-right: 2px solid #5f7454;
+  border-right: 2px solid #43513b;
   font-size: 1.3rem;
-  color: #5f7454;
+  color: #3d4a36;
   min-width: 220px;
   width: 220px;
 }
@@ -318,7 +318,6 @@ main li {
 .servicos-tabela tr:nth-child(even) td {
   background-color: #f6f8f4;
 }
-
 
 
 
