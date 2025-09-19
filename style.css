@@ -210,7 +210,7 @@ header > .cabecalho img {
 }
 
 .texto-paragrafo {
-  font-size: 1.2rem;
+  font-size: 0.91rem;
 }
 
 .subtitulo {
@@ -749,6 +749,7 @@ main li {
 
   .galeria-mosaico {
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 1rem;
     width: 100%;
@@ -758,7 +759,7 @@ main li {
   .galeria-mosaico img {
     width: 100%;
     height: auto;
-    max-height: 140px;
+
     width: 375px;
     object-fit: cover;
     border-radius: 0.5rem;
