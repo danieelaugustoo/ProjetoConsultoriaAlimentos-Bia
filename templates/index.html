@@ -1,114 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Beatriz Vasconcelos - Consultora de Alimentos</title>
-    <link rel="stylesheet" href="./style.css" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./apple-touch-icon.png"
+      href="{{ url_for('static', filename='favicon_io/apple-touch-icon.png') }}"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./imagens/favicon_io/favicon-32x32.png"
+      href="{{ url_for('static', filename='favicon_io/favicon-32x32.png') }}"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./imagens/favicon_io/favicon-16x16.png"
+      href="{{ url_for('static', filename='favicon_io/favicon-16x16.png') }}"
     />
   </head>
 
   <body>
     <header>
       <img
-        src="./icones/avocado.png"
+        src="{{ url_for('static', filename='icones/avocado.png') }}"
         alt="Abacate"
         class="header-icon avocado-meio1"
       />
       <img
-        src="./icones/lemon.png"
+        src="{{ url_for('static', filename='icones/lemon.png') }}"
         alt="Limão"
         class="header-icon lemon-meio1"
       />
       <img
-        src="./icones/broccoli.png"
+        src="{{ url_for('static', filename='icones/broccoli.png') }}"
         alt="Brócolis"
         class="header-icon broccoli-meio1"
       />
       <img
-        src="./icones/lettuce.png"
+        src="{{ url_for('static', filename='icones/lettuce.png') }}"
         alt="Alface"
         class="header-icon lettuce-meio1"
       />
       <img
-        src="./icones/lemon.png"
+        src="{{ url_for('static', filename='icones/lemon.png') }}"
         alt="Limão"
         class="header-icon lemon-meio2"
       />
       <img
-        src="./icones/avocado.png"
+        src="{{ url_for('static', filename='icones/avocado.png') }}"
         alt="Abacate"
         class="header-icon avocado-meio2"
       />
       <img
-        src="./icones/broccoli.png"
+        src="{{ url_for('static', filename='icones/broccoli.png') }}"
         alt="Brócolis"
         class="header-icon broccoli-meio2"
       />
       <img
-        src="./icones/lettuce.png"
+        src="{{ url_for('static', filename='icones/lettuce.png') }}"
         alt="Alface"
         class="header-icon lettuce-meio2"
       />
       <img
-        src="./icones/avocado.png"
+        src="{{ url_for('static', filename='icones/avocado.png') }}"
         alt="Abacate"
         class="header-icon avocado-canto"
       />
       <img
-        src="./icones/broccoli.png"
+        src="{{ url_for('static', filename='icones/broccoli.png') }}"
         alt="Brócolis"
         class="header-icon broccoli-canto"
       />
       <img
-        src="./icones/lemon.png"
+        src="{{ url_for('static', filename='icones/lemon.png') }}"
         alt="Limão"
         class="header-icon lemon-canto"
       />
       <img
-        src="./icones/lettuce.png"
+        src="{{ url_for('static', filename='icones/lettuce.png') }}"
         alt="Alface"
         class="header-icon lettuce-canto"
       />
       <img
-        src="./icones/lemon.png"
+        src="{{ url_for('static', filename='icones/lemon.png') }}"
         alt="Limão"
         class="header-icon lemon-canto2"
       />
       <img
-        src="./icones/avocado.png"
+        src="{{ url_for('static', filename='icones/avocado.png') }}"
         alt="Abacate"
         class="header-icon avocado-canto2"
       />
       <img
-        src="./icones/broccoli.png"
+        src="{{ url_for('static', filename='icones/broccoli.png') }}"
         alt="Brócolis"
         class="header-icon broccoli-canto2"
       />
       <img
-        src="./icones/lettuce.png"
+        src="{{ url_for('static', filename='icones/lettuce.png') }}"
         alt="Alface"
         class="header-icon lettuce-canto2"
       />
 
       <div class="cabecalho">
-        <img src="./imagens/logoverde.png" alt="Logo Consultoria" />
+        <img
+          src="{{ url_for('static', filename='imagens/logoverde.png') }}"
+          alt="Logo Consultoria"
+        />
       </div>
     </header>
 
@@ -131,7 +139,15 @@
           </section>
         </div>
       </div>
-
+      <section class="material-gratuito">
+        <form action="/cadastro" method="post">
+          <label for="your-name">Nome:</label>
+          <input type="text" id="your-name" name="name" />
+          <label for="your-email">E-mail:</label>
+          <input type="email" id="your-email" name="email" />
+          <button type="submit">Receber E-book</button>
+        </form>
+      </section>
       <section class="sobre">
         <div class="container">
           <h2 class="subtitulo">QUEM SOU EU?</h2>
@@ -149,24 +165,30 @@
 
           <p class="texto-paragrafo">
             Lidero equipes, capacito pessoas e busco sempre transformar desafios
-            em soluções, garantindo produtos seguros e a
-            confiança do consumidor.
+            em soluções, garantindo produtos seguros e a confiança do
+            consumidor.
           </p>
         </div>
 
         <section class="mosaico-imagens">
           <div class="galeria-mosaico">
             <div class="first-image">
-              <img src="./imagens/chef-na-cozinha-tomando-notas.jpg" alt="" />
+              <img
+                src="{{ url_for('static', filename='imagens/chef-na-cozinha-tomando-notas.jpg') }}"
+                alt=""
+              />
             </div>
             <div class="second-image">
               <img
-                src="./imagens/woman-with-notepad-vegetables-kitchen-table-preparing-recipe.jpg"
+                src="{{ url_for('static', filename='imagens/woman-with-notepad-vegetables-kitchen-table-preparing-recipe.jpg') }}"
                 alt=""
               />
             </div>
             <div class="third-image">
-              <img src="./imagens/mulher-escrita-e-turvo-fruta.jpg" alt="" />
+              <img
+                src="{{ url_for('static', filename='imagens/mulher-escrita-e-turvo-fruta.jpg') }}"
+                alt=""
+              />
             </div>
           </div>
         </section>
@@ -233,7 +255,7 @@
             <tr class="linha-servico">
               <td class="titulo-servico">Rotulagem</td>
               <td class="descricao">
-                Criação e revisão de tabelas nutricionais e rótulos
+                Criação e revisão de tabelas nutricionais e rótulos
               </td>
             </tr>
           </tbody>
@@ -242,7 +264,10 @@
         <section class="publico-alvo">
           <h1>ÁREAS DE ATUAÇÃO</h1>
           <div class="item-publico">
-            <img src="./imagens/fabrica.png" alt="Ícone de Indústrias" />
+            <img
+              src="{{ url_for('static', filename='imagens/fabrica.png') }}"
+              alt="Ícone de Indústrias"
+            />
             <h3>INDÚSTRIAS</h3>
             <p class="texto-paragrafo">
               Indústrias de alimentos<br />
@@ -251,7 +276,10 @@
           </div>
 
           <div class="item-publico">
-            <img src="./imagens/prato.png" alt="Ícone de Alimentação" />
+            <img
+              src="{{ url_for('static', filename='imagens/prato.png') }}"
+              alt="Ícone de Alimentação"
+            />
             <h3>SERVIÇOS DE ALIMENTAÇÃO</h3>
             <p class="texto-paragrafo">
               Supermercados<br />
@@ -265,7 +293,10 @@
           </div>
 
           <div class="item-publico">
-            <img src="./imagens/pessoas.png" alt="Ícone de Pessoas" />
+            <img
+              src="{{ url_for('static', filename='imagens/pessoas.png') }}"
+              alt="Ícone de Pessoas"
+            />
             <h3>PESSOAS</h3>
             <p class="texto-paragrafo">Treinamentos</p>
           </div>
@@ -275,12 +306,18 @@
 
     <div class="contato-info">
       <div class="email">
-        <img src="./icones/carta.png" alt="Carta Ícone" />
+        <img
+          src="{{ url_for('static', filename='icones/carta.png') }}"
+          alt="Carta Ícone"
+        />
         <p>beatriz.consultoradealimentos@gmail.com</p>
       </div>
 
       <div class="whatsapp">
-        <img src="./icones/whatsapp.png" alt="Whatsapp Ícone" />
+        <img
+          src="{{ url_for('static', filename='icones/whatsapp.png') }}"
+          alt="Whatsapp Ícone"
+        />
         <a
           href="https://api.whatsapp.com/send?phone=5511945097739&text=Olá!+Gostaria+de+mais+informações."
           target="_blank"
@@ -290,7 +327,10 @@
       </div>
 
       <div class="instagram">
-        <img src="./icones/instagram.png" alt="Instagram Ícone" />
+        <img
+          src="{{ url_for('static', filename='icones/instagram.png') }}"
+          alt="Instagram Ícone"
+        />
         <a
           href="https://www.instagram.com/beatriz.consultoradealimentos/"
           target="_blank"
@@ -299,7 +339,10 @@
       </div>
 
       <div class="linkedin">
-        <img src="./icones/linkedin.png" alt="LinkedIn Ícone" />
+        <img
+          src="{{ url_for('static', filename='icones/linkedin.png') }}"
+          alt="LinkedIn Ícone"
+        />
         <a
           href="https://www.linkedin.com/in/beatrizvasconcelosconsultora/"
           target="_blank"
