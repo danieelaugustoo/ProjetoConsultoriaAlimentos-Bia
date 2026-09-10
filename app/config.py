@@ -70,6 +70,8 @@ class Config:
     TURNSTILE_SECRET = os.environ.get("TURNSTILE_SECRET", "")
     TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
 
+    POPUP_ENABLED = _bool_env("POPUP_ENABLED", True)
+
     RATELIMIT_STORAGE_URI = os.environ.get("RATELIMIT_STORAGE_URI", "memory://")
     RATELIMIT_PUBLICO = os.environ.get("RATELIMIT_PUBLICO", "5 per hour")
     RATELIMIT_LOGIN = os.environ.get("RATELIMIT_LOGIN", "5 per minute")

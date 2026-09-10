@@ -89,12 +89,18 @@ def create_app(config_nome: str | None = None) -> Flask:
     _configurar_logs(app)
     _registrar_erros(app)
 
+    from .antispam import carimbo_agora
+    from .models import ORIGENS
+
     @app.context_processor
     def _globais_template():
         return {
             "ano_atual": datetime.now().year,
             "turnstile_enabled": app.config["TURNSTILE_ENABLED"],
             "turnstile_site_key": app.config["TURNSTILE_SITE_KEY"],
+            "popup_enabled": app.config["POPUP_ENABLED"],
+            "carimbo_form": carimbo_agora(),
+            "origens": ORIGENS,
             "contato": {
                 "email": app.config["CONTATO_EMAIL"],
                 "whatsapp": app.config["CONTATO_WHATSAPP"],

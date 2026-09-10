@@ -75,11 +75,18 @@ class Lead(db.Model):
     referral_source = db.Column(db.String(30), nullable=False)
     referral_other = db.Column(db.String(160))
 
-    material_id = db.Column(db.Integer, db.ForeignKey("material.id"), nullable=False, index=True)
+    # Nulo quando o cadastro veio do pop-up de entrada (não é sobre um material).
+    material_id = db.Column(db.Integer, db.ForeignKey("material.id"), nullable=True, index=True)
     material = db.relationship("Material", back_populates="leads")
+    source = db.Column(db.String(20), nullable=False, default="material")  # material | popup
 
     consent_lgpd = db.Column(db.Boolean, nullable=False, default=False)
     consent_at = db.Column(db.DateTime(timezone=True))
+
+    # Double opt-in: o material/boas-vindas só sai depois que o e-mail é confirmado.
+    confirmed = db.Column(db.Boolean, nullable=False, default=False, index=True)
+    confirm_token = db.Column(db.String(64), unique=True, index=True)
+    confirmed_at = db.Column(db.DateTime(timezone=True))
 
     ip_hash = db.Column(db.String(64))
     user_agent = db.Column(db.String(255))
@@ -92,6 +99,10 @@ class Lead(db.Model):
         if self.referral_source == "outro" and self.referral_other:
             return f"Outro: {self.referral_other}"
         return ORIGENS_LABEL.get(self.referral_source, self.referral_source)
+
+    @staticmethod
+    def novo_confirm_token() -> str:
+        return secrets.token_urlsafe(32)
 
 
 class DownloadToken(db.Model):

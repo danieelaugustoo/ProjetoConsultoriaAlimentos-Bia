@@ -15,6 +15,7 @@ from wtforms import (
 )
 from wtforms.validators import DataRequired, Email, Length, Optional, Regexp, ValidationError
 
+from .antispam import carimbo_valido, email_descartavel
 from .models import ORIGENS
 
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -62,11 +63,20 @@ class LeadForm(FlaskForm):
         validators=[DataRequired("É necessário aceitar a Política de Privacidade.")],
     )
     website = HiddenField()  # honeypot
+    ts = HiddenField()       # carimbo de tempo assinado (honeypot temporal)
     submit = SubmitField("Receber material")
 
     def validate_referral_source(self, field):
         if field.data == "outro" and not (self.referral_other.data or "").strip():
             raise ValidationError('Descreva como conheceu a Beatriz (você escolheu "Outro").')
+
+    def validate_email(self, field):
+        if email_descartavel(field.data or ""):
+            raise ValidationError("Use um e-mail permanente, não um endereço temporário.")
+
+    def validate_ts(self, field):
+        if not carimbo_valido(field.data or ""):
+            raise ValidationError("Envio inválido. Recarregue a página e tente de novo.")
 
 
 class LoginForm(FlaskForm):
