@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{% block title %}Painel{% endblock %} — Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}" />
+    <link rel="icon" type="image/png" sizes="32x32"
+      href="{{ url_for('static', filename='imagens/favicon_io/favicon-32x32.png') }}" />
+  </head>
+  <body class="admin">
+    {% if current_user.is_authenticated %}
+      <nav class="admin-nav" aria-label="Painel">
+        <span class="admin-nav__marca">Painel &middot; Beatriz Vasconcelos</span>
+        <a href="{{ url_for('admin.dashboard') }}">Início</a>
+        <a href="{{ url_for('admin.materiais_listar') }}">Materiais</a>
+        <a href="{{ url_for('admin.leads_listar') }}">Leads</a>
+        <a href="{{ url_for('public.home') }}" target="_blank" rel="noopener">Ver site</a>
+        <form method="post" action="{{ url_for('admin.logout') }}" class="admin-nav__sair">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+          <button type="submit">Sair</button>
+        </form>
+      </nav>
+    {% endif %}
+
+    {% with mensagens = get_flashed_messages(with_categories=true) %}
+      {% if mensagens %}
+        <div class="flash-area" role="status" aria-live="polite">
+          {% for categoria, texto in mensagens %}
+            <div class="flash flash--{{ categoria }}">{{ texto }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <main class="admin-main">
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-br">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /></head>
+<body style="margin:0;padding:0;background:#f6f8f4;font-family:Arial,Helvetica,sans-serif;color:#3d4a36;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f6f8f4;padding:24px 0;">
+    <tr><td align="center">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(95,116,84,0.12);">
+        <tr>
+          <td style="background:#5f7454;padding:24px 32px;color:#ffffff;font-size:18px;font-weight:bold;">
+            Beatriz Vasconcelos &middot; Consultora de Alimentos
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:32px;">
+            <p style="margin:0 0 16px;font-size:16px;">Olá, {{ lead.full_name }}!</p>
+            <p style="margin:0 0 16px;font-size:16px;line-height:1.5;">
+              Obrigada pelo interesse. Aqui está o material que você solicitou:
+              <strong>{{ material.title }}</strong>.
+            </p>
+            <p style="margin:0 0 24px;font-size:16px;line-height:1.5;">
+              O arquivo em PDF está anexado a este e-mail. Você também pode baixá-lo pelo botão abaixo:
+            </p>
+            <p style="margin:0 0 28px;">
+              <a href="{{ link_download }}"
+                 style="display:inline-block;background:#5f7454;color:#ffffff;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:16px;font-weight:bold;">
+                Baixar o material
+              </a>
+            </p>
+            <p style="margin:0 0 8px;font-size:13px;color:#6b7766;">
+              Por segurança, este link tem validade limitada. Se expirar, basta preencher o
+              formulário novamente no site.
+            </p>
+            <hr style="border:none;border-top:1px solid #e4e4e4;margin:28px 0;" />
+            <p style="margin:0 0 8px;font-size:14px;line-height:1.6;">
+              Precisa de apoio na segurança e qualidade de alimentos da sua operação?
+              Fale com a Beatriz:
+            </p>
+            <p style="margin:0;font-size:14px;line-height:1.8;">
+              E-mail: <a href="mailto:{{ contato_email }}" style="color:#5f7454;">{{ contato_email }}</a><br />
+              WhatsApp: <a href="{{ contato_whatsapp }}" style="color:#5f7454;">enviar mensagem</a><br />
+              Instagram: <a href="{{ contato_instagram }}" style="color:#5f7454;">@beatriz.consultoradealimentos</a><br />
+              LinkedIn: <a href="{{ contato_linkedin }}" style="color:#5f7454;">perfil profissional</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="background:#f1f3ef;padding:16px 32px;font-size:12px;color:#6b7766;line-height:1.5;">
+            Você recebeu este e-mail porque solicitou um material gratuito no site
+            bvconsultora.com e autorizou o contato. Para não receber mais mensagens,
+            responda este e-mail pedindo a remoção.
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

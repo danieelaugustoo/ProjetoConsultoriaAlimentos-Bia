@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Materiais Gratuitos — Beatriz Vasconcelos{% endblock %}
+{% block meta_description %}Baixe gratuitamente checklists, modelos de documentos e guias de boas práticas de fabricação de alimentos.{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/materiais.css') }}" />{% endblock %}
+
+{% block content %}
+  <section class="materiais-lista">
+    <header class="materiais-lista__cabecalho">
+      <h1>Materiais Gratuitos</h1>
+      <p>
+        Conteúdos práticos para apoiar a segurança e a qualidade de alimentos na sua
+        operação. Escolha um material, preencha seus dados e ele chega no seu e-mail.
+      </p>
+    </header>
+
+    {% if materiais %}
+      <ul class="cards-materiais">
+        {% for material in materiais %}
+          <li class="card-material">
+            <a class="card-material__link" href="{{ url_for('public.material_detalhe', slug=material.slug) }}">
+              <div class="card-material__capa">
+                {% if material.cover_path %}
+                  <img loading="lazy" src="{{ url_for('public.capa', nome=material.cover_path) }}" alt="" />
+                {% else %}
+                  <span class="card-material__capa-vazia" aria-hidden="true">PDF</span>
+                {% endif %}
+              </div>
+              <div class="card-material__corpo">
+                <h2>{{ material.title }}</h2>
+                <p>{{ material.summary }}</p>
+                <span class="card-material__acao">Acessar material &rarr;</span>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="materiais-vazio">
+        Ainda não há materiais publicados. Volte em breve — novos conteúdos são
+        adicionados com frequência.
+      </p>
+    {% endif %}
+  </section>
+{% endblock %}

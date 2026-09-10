@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Política de Privacidade — Beatriz Vasconcelos{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/materiais.css') }}" />{% endblock %}
+
+{% block content %}
+  <article class="pagina-texto">
+    <h1>Política de Privacidade</h1>
+    <p class="pagina-texto__atualizacao">Última atualização: {{ ano_atual }}</p>
+
+    <h2>1. Quem é a controladora dos dados</h2>
+    <p>
+      Beatriz Vasconcelos — Consultora de Alimentos. Contato para assuntos de privacidade:
+      <a href="mailto:{{ contato.email }}">{{ contato.email }}</a>.
+    </p>
+
+    <h2>2. Quais dados coletamos</h2>
+    <p>
+      No formulário de solicitação de materiais gratuitos coletamos: nome completo, e-mail,
+      nome da empresa, cargo e como você conheceu a consultora. Registramos também a data do
+      envio e uma versão <em>anonimizada</em> (com hash) do seu endereço IP, apenas para
+      segurança e prevenção de abuso.
+    </p>
+
+    <h2>3. Para que usamos os dados</h2>
+    <ul>
+      <li>Enviar o material solicitado por e-mail;</li>
+      <li>Entrar em contato sobre serviços de consultoria em segurança e qualidade de alimentos;</li>
+      <li>Entender quais conteúdos são mais úteis para o público.</li>
+    </ul>
+
+    <h2>4. Base legal</h2>
+    <p>
+      O tratamento é realizado com base no seu <strong>consentimento</strong> (art. 7º, I da
+      LGPD — Lei nº 13.709/2018), manifestado ao marcar a caixa de aceite no formulário.
+    </p>
+
+    <h2>5. Compartilhamento</h2>
+    <p>
+      Não vendemos seus dados. Eles podem ser processados por serviços que viabilizam o site
+      e o envio de e-mails (por exemplo, o provedor de e-mail transacional), sempre limitados
+      a essa finalidade.
+    </p>
+
+    <h2>6. Retenção</h2>
+    <p>
+      Mantemos os dados enquanto houver finalidade legítima (relacionamento comercial) ou até
+      que você solicite a exclusão. Registros antigos são removidos periodicamente.
+    </p>
+
+    <h2>7. Seus direitos</h2>
+    <p>
+      Você pode solicitar acesso, correção, portabilidade ou exclusão dos seus dados, bem como
+      revogar o consentimento, escrevendo para
+      <a href="mailto:{{ contato.email }}">{{ contato.email }}</a>.
+    </p>
+
+    <h2>8. Segurança</h2>
+    <p>
+      Adotamos medidas técnicas e organizacionais para proteger os dados, incluindo conexão
+      criptografada (HTTPS), controle de acesso ao painel administrativo, limitação de tentativas
+      e armazenamento restrito dos arquivos.
+    </p>
+  </article>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Link expirado — Beatriz Vasconcelos{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/materiais.css') }}" />{% endblock %}
+
+{% block content %}
+  <section class="mensagem-central">
+    <div class="mensagem-central__icone mensagem-central__icone--aviso" aria-hidden="true">!</div>
+    <h1>Este link de download expirou</h1>
+    <p>
+      Por segurança, os links de download têm validade e limite de uso. Para receber o
+      material novamente, basta preencher o formulário mais uma vez.
+    </p>
+    <a class="botao-principal" href="{{ url_for('public.materiais') }}">Voltar aos materiais</a>
+  </section>
+{% endblock %}

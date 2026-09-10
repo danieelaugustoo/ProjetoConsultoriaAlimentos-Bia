@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{% block meta_description %}Consultoria especializada em segurança e qualidade de alimentos — Beatriz Vasconcelos.{% endblock %}" />
+    <title>{% block title %}Beatriz Vasconcelos - Consultora de Alimentos{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    {% block styles %}{% endblock %}
+
+    <link rel="apple-touch-icon" sizes="180x180"
+      href="{{ url_for('static', filename='imagens/favicon_io/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32"
+      href="{{ url_for('static', filename='imagens/favicon_io/favicon-32x32.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16"
+      href="{{ url_for('static', filename='imagens/favicon_io/favicon-16x16.png') }}" />
+  </head>
+
+  <body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a class="site-nav__marca" href="{{ url_for('public.home') }}">
+        <img src="{{ url_for('static', filename='imagens/logoverde.png') }}"
+             alt="Beatriz Vasconcelos - Consultora de Alimentos" width="150" height="48" />
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="{{ url_for('public.home') }}">Início</a></li>
+        <li><a href="{{ url_for('public.materiais') }}">Materiais Gratuitos</a></li>
+        <li><a href="{{ url_for('public.home') }}#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    {% with mensagens = get_flashed_messages(with_categories=true) %}
+      {% if mensagens %}
+        <div class="flash-area" role="status" aria-live="polite">
+          {% for categoria, texto in mensagens %}
+            <div class="flash flash--{{ categoria }}">{{ texto }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <main id="conteudo">
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include "partials/_footer.html" %}
+
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

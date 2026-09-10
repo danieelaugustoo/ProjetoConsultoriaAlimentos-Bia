@@ -1,0 +1,27 @@
+<footer class="contato-info" id="contato">
+  <div class="email">
+    <img src="{{ url_for('static', filename='icones/carta.png') }}" alt="" />
+    <p>{{ contato.email }}</p>
+  </div>
+
+  <div class="whatsapp">
+    <img src="{{ url_for('static', filename='icones/whatsapp.png') }}" alt="" />
+    <a href="{{ contato.whatsapp }}&text=Ol%C3%A1!+Gostaria+de+mais+informa%C3%A7%C3%B5es."
+       target="_blank" rel="noopener">Agende seu atendimento no WhatsApp</a>
+  </div>
+
+  <div class="instagram">
+    <img src="{{ url_for('static', filename='icones/instagram.png') }}" alt="" />
+    <a href="{{ contato.instagram }}" target="_blank" rel="noopener">Acompanhe nosso Instagram</a>
+  </div>
+
+  <div class="linkedin">
+    <img src="{{ url_for('static', filename='icones/linkedin.png') }}" alt="" />
+    <a href="{{ contato.linkedin }}" target="_blank" rel="noopener">Perfil Profissional</a>
+  </div>
+
+  <p class="rodape-legal">
+    &copy; {{ ano_atual }} Beatriz Vasconcelos &middot;
+    <a href="{{ url_for('public.privacidade') }}">Política de Privacidade</a>
+  </p>
+</footer>

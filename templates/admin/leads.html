@@ -1,0 +1,68 @@
+{% extends "admin/_base.html" %}
+{% block title %}Leads{% endblock %}
+
+{% block content %}
+  <div class="admin-titulo-linha">
+    <h1>Leads</h1>
+    <a class="botao-secundario"
+       href="{{ url_for('admin.leads_csv', material=material_id) if material_id else url_for('admin.leads_csv') }}">
+      Exportar CSV
+    </a>
+  </div>
+
+  <form method="get" class="admin-filtro">
+    <label>
+      Material
+      <select name="material" onchange="this.form.submit()">
+        <option value="">Todos</option>
+        {% for m in materiais %}
+          <option value="{{ m.id }}" {{ "selected" if material_id == m.id }}>{{ m.title }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>
+      Busca
+      <input type="search" name="q" value="{{ busca }}" placeholder="nome, e-mail ou empresa" />
+    </label>
+    <button type="submit" class="botao-secundario">Filtrar</button>
+  </form>
+
+  {% if leads %}
+    <table class="admin-tabela">
+      <thead>
+        <tr>
+          <th>Data</th><th>Nome</th><th>E-mail</th><th>Empresa</th><th>Cargo</th>
+          <th>Como conheceu</th><th>Material</th><th>Envio</th><th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for lead in leads %}
+          <tr>
+            <td>{{ lead.created_at.strftime("%d/%m/%Y %H:%M") }}</td>
+            <td>{{ lead.full_name }}</td>
+            <td>{{ lead.email }}</td>
+            <td>{{ lead.company }}</td>
+            <td>{{ lead.role }}</td>
+            <td>{{ lead.origem_label }}</td>
+            <td>{{ lead.material.title if lead.material else "—" }}</td>
+            <td><span class="tag tag--{{ lead.email_status }}">{{ lead.email_status }}</span></td>
+            <td class="admin-tabela__acoes">
+              <form method="post" action="{{ url_for('admin.lead_reenviar', lead_id=lead.id) }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                <button type="submit">Reenviar</button>
+              </form>
+              <form method="post" action="{{ url_for('admin.lead_excluir', lead_id=lead.id) }}"
+                    onsubmit="return confirm('Excluir este lead? (LGPD)');">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                <button type="submit" class="link-perigo">Excluir</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="admin-obs">Exibindo até 500 registros mais recentes.</p>
+  {% else %}
+    <p>Nenhum lead encontrado com os filtros atuais.</p>
+  {% endif %}
+{% endblock %}

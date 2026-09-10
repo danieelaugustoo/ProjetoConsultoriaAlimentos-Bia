@@ -1,0 +1,23 @@
+{% extends "admin/_base.html" %}
+{% block title %}Entrar{% endblock %}
+
+{% block content %}
+  <div class="admin-login">
+    <h1>Painel administrativo</h1>
+    <p class="admin-login__sub">Acesso restrito à consultora.</p>
+    <form method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <div class="campo">
+        {{ form.email.label }}
+        {{ form.email(type="email", autocomplete="username", required=true) }}
+        {% for e in form.email.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+      </div>
+      <div class="campo">
+        {{ form.password.label }}
+        {{ form.password(autocomplete="current-password", required=true) }}
+        {% for e in form.password.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+      </div>
+      {{ form.submit(class="botao-principal") }}
+    </form>
+  </div>
+{% endblock %}

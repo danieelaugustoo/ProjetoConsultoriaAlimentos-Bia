@@ -1,0 +1,44 @@
+{% extends "admin/_base.html" %}
+{% block title %}Materiais{% endblock %}
+
+{% block content %}
+  <div class="admin-titulo-linha">
+    <h1>Materiais</h1>
+    <a class="botao-principal" href="{{ url_for('admin.material_novo') }}">+ Novo material</a>
+  </div>
+
+  {% if materiais %}
+    <table class="admin-tabela">
+      <thead>
+        <tr><th>Título</th><th>Endereço</th><th>Status</th><th>Downloads</th><th>Atualizado</th><th></th></tr>
+      </thead>
+      <tbody>
+        {% for m in materiais %}
+          <tr>
+            <td>{{ m.title }}</td>
+            <td><code>/materiais/{{ m.slug }}</code></td>
+            <td>
+              {% if m.is_published %}
+                <span class="tag tag--sent">publicado</span>
+              {% else %}
+                <span class="tag tag--pending">rascunho</span>
+              {% endif %}
+            </td>
+            <td>{{ m.download_count }}</td>
+            <td>{{ m.updated_at.strftime("%d/%m/%Y") }}</td>
+            <td class="admin-tabela__acoes">
+              <a href="{{ url_for('admin.material_editar', material_id=m.id) }}">Editar</a>
+              <form method="post" action="{{ url_for('admin.material_excluir', material_id=m.id) }}"
+                    onsubmit="return confirm('Excluir o material “{{ m.title }}”? Esta ação não pode ser desfeita.');">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                <button type="submit" class="link-perigo">Excluir</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>Nenhum material cadastrado. Comece criando o primeiro.</p>
+  {% endif %}
+{% endblock %}

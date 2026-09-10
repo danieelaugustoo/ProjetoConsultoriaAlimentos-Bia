@@ -1,0 +1,49 @@
+{% extends "admin/_base.html" %}
+{% block title %}Início{% endblock %}
+
+{% block content %}
+  <h1>Visão geral</h1>
+
+  <div class="admin-cards">
+    <div class="admin-card">
+      <span class="admin-card__num">{{ total_materiais }}</span>
+      <span class="admin-card__rot">materiais ({{ total_publicados }} publicados)</span>
+    </div>
+    <div class="admin-card">
+      <span class="admin-card__num">{{ total_leads }}</span>
+      <span class="admin-card__rot">leads capturados</span>
+    </div>
+    <div class="admin-card {% if falhas_email %}admin-card--alerta{% endif %}">
+      <span class="admin-card__num">{{ falhas_email }}</span>
+      <span class="admin-card__rot">e-mails com falha</span>
+    </div>
+  </div>
+
+  <div class="admin-acoes">
+    <a class="botao-principal" href="{{ url_for('admin.material_novo') }}">+ Novo material</a>
+    <a class="botao-secundario" href="{{ url_for('admin.leads_listar') }}">Ver todos os leads</a>
+  </div>
+
+  <h2>Últimos leads</h2>
+  {% if ultimos %}
+    <table class="admin-tabela">
+      <thead><tr><th>Data</th><th>Nome</th><th>Empresa</th><th>Material</th><th>E-mail</th></tr></thead>
+      <tbody>
+        {% for lead in ultimos %}
+          <tr>
+            <td>{{ lead.created_at.strftime("%d/%m/%Y %H:%M") }}</td>
+            <td>{{ lead.full_name }}</td>
+            <td>{{ lead.company }}</td>
+            <td>{{ lead.material.title if lead.material else "—" }}</td>
+            <td>
+              {{ lead.email }}
+              <span class="tag tag--{{ lead.email_status }}">{{ lead.email_status }}</span>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>Nenhum lead ainda.</p>
+  {% endif %}
+{% endblock %}

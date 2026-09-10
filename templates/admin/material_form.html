@@ -1,0 +1,61 @@
+{% extends "admin/_base.html" %}
+{% block title %}{{ "Novo material" if modo == "novo" else "Editar material" }}{% endblock %}
+
+{% block content %}
+  <p><a href="{{ url_for('admin.materiais_listar') }}">&larr; Voltar para materiais</a></p>
+  <h1>{{ "Novo material" if modo == "novo" else "Editar material" }}</h1>
+
+  <form method="post" enctype="multipart/form-data" novalidate class="admin-form">
+    {{ form.hidden_tag() }}
+
+    <div class="campo">
+      {{ form.title.label }}
+      {{ form.title(required=true) }}
+      {% for e in form.title.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+    </div>
+
+    <div class="campo">
+      {{ form.slug.label }}
+      {{ form.slug(placeholder="gerado automaticamente a partir do título") }}
+      {% for e in form.slug.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+      <small>Deixe em branco para gerar automaticamente. Use apenas letras minúsculas, números e hífens.</small>
+    </div>
+
+    <div class="campo">
+      {{ form.summary.label }}
+      {{ form.summary(rows="2", required=true) }}
+      {% for e in form.summary.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+    </div>
+
+    <div class="campo">
+      {{ form.body_html.label }}
+      {{ form.body_html(rows="10") }}
+      {% for e in form.body_html.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+      <small>Aceita HTML simples: parágrafos, listas, negrito, itálico, links e subtítulos (h2/h3).</small>
+    </div>
+
+    <div class="campo">
+      {{ form.pdf.label }}
+      {{ form.pdf(accept="application/pdf") }}
+      {% for e in form.pdf.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+      {% if modo == "editar" and material.pdf_filename %}
+        <small>Atual: <strong>{{ material.pdf_filename }}</strong>. Envie um novo arquivo apenas se quiser substituir.</small>
+      {% endif %}
+    </div>
+
+    <div class="campo">
+      {{ form.cover.label }}
+      {{ form.cover(accept="image/jpeg,image/png,image/webp") }}
+      {% for e in form.cover.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+      {% if modo == "editar" and material.cover_path %}
+        <small>Já existe uma capa. Envie outra imagem para substituir.</small>
+      {% endif %}
+    </div>
+
+    <div class="campo campo--checkbox">
+      <label>{{ form.is_published() }} <span>Publicado (visível no site)</span></label>
+    </div>
+
+    {{ form.submit(class="botao-principal") }}
+  </form>
+{% endblock %}

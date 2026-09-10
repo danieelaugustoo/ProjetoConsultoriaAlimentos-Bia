@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}{{ material.title }} — Materiais Gratuitos{% endblock %}
+{% block meta_description %}{{ material.summary }}{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/materiais.css') }}" />{% endblock %}
+
+{% block content %}
+  <article class="material-detalhe">
+    <nav class="migalhas" aria-label="Você está em">
+      <a href="{{ url_for('public.materiais') }}">Materiais Gratuitos</a>
+      <span aria-hidden="true">/</span>
+      <span>{{ material.title }}</span>
+    </nav>
+
+    <div class="material-detalhe__grade">
+      <div class="material-detalhe__texto">
+        {% if material.cover_path %}
+          <img class="material-detalhe__capa" loading="lazy"
+               src="{{ url_for('public.capa', nome=material.cover_path) }}" alt="" />
+        {% endif %}
+        <h1>{{ material.title }}</h1>
+        <p class="material-detalhe__chamada">{{ material.summary }}</p>
+        <div class="material-detalhe__corpo">
+          {{ material.body_html | safe }}
+        </div>
+      </div>
+
+      <aside class="material-detalhe__form" id="baixar">
+        <h2>Receba o material no seu e-mail</h2>
+        <form method="post"
+              action="{{ url_for('public.solicitar_material', slug=material.slug) }}"
+              novalidate>
+          {{ form.hidden_tag() }}
+
+          {# Honeypot: não remova; fica invisível para humanos #}
+          <div class="hp-campo" aria-hidden="true">
+            {{ form.website(tabindex="-1", autocomplete="off") }}
+          </div>
+
+          <div class="campo">
+            {{ form.full_name.label }}
+            {{ form.full_name(autocomplete="name", required=true) }}
+            {% for e in form.full_name.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+          </div>
+
+          <div class="campo">
+            {{ form.email.label }}
+            {{ form.email(type="email", autocomplete="email", required=true) }}
+            {% for e in form.email.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+          </div>
+
+          <div class="campo">
+            {{ form.company.label }}
+            {{ form.company(autocomplete="organization", required=true) }}
+            {% for e in form.company.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+          </div>
+
+          <div class="campo">
+            {{ form.role.label }}
+            {{ form.role(autocomplete="organization-title", required=true) }}
+            {% for e in form.role.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+          </div>
+
+          <div class="campo">
+            {{ form.referral_source.label }}
+            {{ form.referral_source(required=true) }}
+            {% for e in form.referral_source.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+          </div>
+
+          <div class="campo" id="campo-outro" hidden>
+            {{ form.referral_other.label }}
+            {{ form.referral_other() }}
+            {% for e in form.referral_other.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+          </div>
+
+          <div class="campo campo--checkbox">
+            <label>
+              {{ form.consent_lgpd(required=true) }}
+              <span>
+                Autorizo o contato e o tratamento dos meus dados conforme a
+                <a href="{{ url_for('public.privacidade') }}" target="_blank" rel="noopener">Política de Privacidade</a>.
+              </span>
+            </label>
+            {% for e in form.consent_lgpd.errors %}<span class="campo-erro">{{ e }}</span>{% endfor %}
+          </div>
+
+          {% if turnstile_enabled %}
+            <div class="cf-turnstile" data-sitekey="{{ turnstile_site_key }}"></div>
+          {% endif %}
+
+          {{ form.submit(class="botao-principal") }}
+        </form>
+      </aside>
+    </div>
+  </article>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='js/form.js') }}" defer></script>
+  {% if turnstile_enabled %}
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+  {% endif %}
+{% endblock %}

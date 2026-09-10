@@ -1,354 +1,123 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Beatriz Vasconcelos - Consultora de Alimentos</title>
+{% extends "base.html" %}
 
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
+{% block content %}
+  <header class="hero">
+    {% set icones = [
+      ['avocado','Abacate','avocado-meio1'], ['lemon','Limão','lemon-meio1'],
+      ['broccoli','Brócolis','broccoli-meio1'], ['lettuce','Alface','lettuce-meio1'],
+      ['lemon','Limão','lemon-meio2'], ['avocado','Abacate','avocado-meio2'],
+      ['broccoli','Brócolis','broccoli-meio2'], ['lettuce','Alface','lettuce-meio2'],
+      ['avocado','Abacate','avocado-canto'], ['broccoli','Brócolis','broccoli-canto'],
+      ['lemon','Limão','lemon-canto'], ['lettuce','Alface','lettuce-canto'],
+      ['lemon','Limão','lemon-canto2'], ['avocado','Abacate','avocado-canto2'],
+      ['broccoli','Brócolis','broccoli-canto2'], ['lettuce','Alface','lettuce-canto2']
+    ] %}
+    {% for icone, alt, pos in icones %}
+      <img src="{{ url_for('static', filename='icones/' ~ icone ~ '.png') }}"
+           alt="" aria-hidden="true" class="header-icon {{ pos }}" />
+    {% endfor %}
 
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{{ url_for('static', filename='favicon_io/apple-touch-icon.png') }}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{{ url_for('static', filename='favicon_io/favicon-32x32.png') }}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{{ url_for('static', filename='favicon_io/favicon-16x16.png') }}"
-    />
-  </head>
-
-  <body>
-    <header>
-      <img
-        src="{{ url_for('static', filename='icones/avocado.png') }}"
-        alt="Abacate"
-        class="header-icon avocado-meio1"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/lemon.png') }}"
-        alt="Limão"
-        class="header-icon lemon-meio1"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/broccoli.png') }}"
-        alt="Brócolis"
-        class="header-icon broccoli-meio1"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/lettuce.png') }}"
-        alt="Alface"
-        class="header-icon lettuce-meio1"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/lemon.png') }}"
-        alt="Limão"
-        class="header-icon lemon-meio2"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/avocado.png') }}"
-        alt="Abacate"
-        class="header-icon avocado-meio2"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/broccoli.png') }}"
-        alt="Brócolis"
-        class="header-icon broccoli-meio2"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/lettuce.png') }}"
-        alt="Alface"
-        class="header-icon lettuce-meio2"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/avocado.png') }}"
-        alt="Abacate"
-        class="header-icon avocado-canto"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/broccoli.png') }}"
-        alt="Brócolis"
-        class="header-icon broccoli-canto"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/lemon.png') }}"
-        alt="Limão"
-        class="header-icon lemon-canto"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/lettuce.png') }}"
-        alt="Alface"
-        class="header-icon lettuce-canto"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/lemon.png') }}"
-        alt="Limão"
-        class="header-icon lemon-canto2"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/avocado.png') }}"
-        alt="Abacate"
-        class="header-icon avocado-canto2"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/broccoli.png') }}"
-        alt="Brócolis"
-        class="header-icon broccoli-canto2"
-      />
-      <img
-        src="{{ url_for('static', filename='icones/lettuce.png') }}"
-        alt="Alface"
-        class="header-icon lettuce-canto2"
-      />
-
-      <div class="cabecalho">
-        <img
-          src="{{ url_for('static', filename='imagens/logoverde.png') }}"
-          alt="Logo Consultoria"
-        />
-      </div>
-    </header>
-
-    <main>
-      <div class="home-container">
-        <div class="home-textos">
-          <section class="home-intro">
-            <h2>
-              CONSULTORIA ESPECIALIZADA EM SEGURANÇA E QUALIDADE DE ALIMENTOS
-            </h2>
-            <hr />
-            <p class="texto-paragrafo">
-              Atendemos indústrias de alimentos e serviços de alimentação,
-              oferecendo um atendimento personalizado, com soluções
-              especializadas para garantir qualidade e segurança dos alimentos.
-              Com anos de experiência comprovada no setor alimentício e
-              resultados reais, nossa consultoria garante conformidade com a
-              legislação vigente e produtos seguros ao consumidor final.
-            </p>
-          </section>
-        </div>
-      </div>
-      <section class="material-gratuito">
-        <form action="/cadastro" method="post">
-          <label for="your-name">Nome:</label>
-          <input type="text" id="your-name" name="name" />
-          <label for="your-email">E-mail:</label>
-          <input type="email" id="your-email" name="email" />
-          <button type="submit">Receber E-book</button>
-        </form>
-      </section>
-      <section class="sobre">
-        <div class="container">
-          <h2 class="subtitulo">QUEM SOU EU?</h2>
-          <p class="texto-paragrafo">
-            Sou Beatriz Vasconcelos, Tecnóloga em Alimentos, atuo há 12 anos na
-            implantação de sistemas que melhoram a performance industrial,
-            aumentam a qualidade dos produtos e dos processos.
-          </p>
-
-          <p class="texto-paragrafo">
-            Tenho experiência com BPF, HACCP, IFS, ISO 9001, shelf life e gestão
-            da qualidade. Já atendi panificação, frigoríficos, supermercados e
-            outros segmentos alimentícios.
-          </p>
-
-          <p class="texto-paragrafo">
-            Lidero equipes, capacito pessoas e busco sempre transformar desafios
-            em soluções, garantindo produtos seguros e a confiança do
-            consumidor.
-          </p>
-        </div>
-
-        <section class="mosaico-imagens">
-          <div class="galeria-mosaico">
-            <div class="first-image">
-              <img
-                src="{{ url_for('static', filename='imagens/chef-na-cozinha-tomando-notas.jpg') }}"
-                alt=""
-              />
-            </div>
-            <div class="second-image">
-              <img
-                src="{{ url_for('static', filename='imagens/woman-with-notepad-vegetables-kitchen-table-preparing-recipe.jpg') }}"
-                alt=""
-              />
-            </div>
-            <div class="third-image">
-              <img
-                src="{{ url_for('static', filename='imagens/mulher-escrita-e-turvo-fruta.jpg') }}"
-                alt=""
-              />
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <section class="servicos">
-        <span class="servicos subtitulo">
-          <h2>SOLUÇÕES</h2>
-        </span>
-        <table class="servicos-tabela interativa">
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="linha-servico">
-              <td class="titulo-servico">Consultoria</td>
-              <td class="descricao">
-                Visita técnica, relatório de diagnóstico e criação de plano de
-                ação.
-              </td>
-            </tr>
-            <tr class="linha-servico">
-              <td class="titulo-servico">Assessoria</td>
-              <td class="descricao">
-                Consultoria com acompanhamento da execução do plano de ação.
-              </td>
-            </tr>
-            <tr class="linha-servico">
-              <td class="titulo-servico">Auditoria</td>
-              <td class="descricao">
-                Auditoria de BPF, ISO 9001:2015, 5S, IFS e em fornecedores para
-                homologação.
-              </td>
-            </tr>
-            <tr class="linha-servico">
-              <td class="titulo-servico">Documentação</td>
-              <td class="descricao">
-                Checklists, POPs, ITs, Fichas Técnicas, APPCC/HACCP e outros
-                documentos de qualidade.
-              </td>
-            </tr>
-            <tr class="linha-servico">
-              <td class="titulo-servico">Treinamentos In Company</td>
-              <td class="descricao">
-                Capacitações presenciais realizadas diretamente na empresa.
-              </td>
-            </tr>
-            <tr class="linha-servico">
-              <td class="titulo-servico">Cliente Oculto</td>
-              <td class="descricao">
-                Visita anônima para avaliar o atendimento e a qualidade dos
-                produtos.
-              </td>
-            </tr>
-            <tr class="linha-servico">
-              <td class="titulo-servico">Shelf Life</td>
-              <td class="descricao">
-                Estudo técnico para definir o prazo de validade dos produtos.
-              </td>
-            </tr>
-            <tr class="linha-servico">
-              <td class="titulo-servico">Rotulagem</td>
-              <td class="descricao">
-                Criação e revisão de tabelas nutricionais e rótulos
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <section class="publico-alvo">
-          <h1>ÁREAS DE ATUAÇÃO</h1>
-          <div class="item-publico">
-            <img
-              src="{{ url_for('static', filename='imagens/fabrica.png') }}"
-              alt="Ícone de Indústrias"
-            />
-            <h3>INDÚSTRIAS</h3>
-            <p class="texto-paragrafo">
-              Indústrias de alimentos<br />
-              Indústrias em geral (5S e ISO 9001:2015)
-            </p>
-          </div>
-
-          <div class="item-publico">
-            <img
-              src="{{ url_for('static', filename='imagens/prato.png') }}"
-              alt="Ícone de Alimentação"
-            />
-            <h3>SERVIÇOS DE ALIMENTAÇÃO</h3>
-            <p class="texto-paragrafo">
-              Supermercados<br />
-              Padarias<br />
-              Restaurantes<br />
-              Pizzarias<br />
-              Lanchonetes<br />
-              Cafeterias<br />
-              Food Trucks
-            </p>
-          </div>
-
-          <div class="item-publico">
-            <img
-              src="{{ url_for('static', filename='imagens/pessoas.png') }}"
-              alt="Ícone de Pessoas"
-            />
-            <h3>PESSOAS</h3>
-            <p class="texto-paragrafo">Treinamentos</p>
-          </div>
-        </section>
-      </section>
-    </main>
-
-    <div class="contato-info">
-      <div class="email">
-        <img
-          src="{{ url_for('static', filename='icones/carta.png') }}"
-          alt="Carta Ícone"
-        />
-        <p>beatriz.consultoradealimentos@gmail.com</p>
-      </div>
-
-      <div class="whatsapp">
-        <img
-          src="{{ url_for('static', filename='icones/whatsapp.png') }}"
-          alt="Whatsapp Ícone"
-        />
-        <a
-          href="https://api.whatsapp.com/send?phone=5511945097739&text=Olá!+Gostaria+de+mais+informações."
-          target="_blank"
-        >
-          Agende seu atendimento no WhatsApp
-        </a>
-      </div>
-
-      <div class="instagram">
-        <img
-          src="{{ url_for('static', filename='icones/instagram.png') }}"
-          alt="Instagram Ícone"
-        />
-        <a
-          href="https://www.instagram.com/beatriz.consultoradealimentos/"
-          target="_blank"
-          >Acompanhe nosso Instagram</a
-        >
-      </div>
-
-      <div class="linkedin">
-        <img
-          src="{{ url_for('static', filename='icones/linkedin.png') }}"
-          alt="LinkedIn Ícone"
-        />
-        <a
-          href="https://www.linkedin.com/in/beatrizvasconcelosconsultora/"
-          target="_blank"
-          >Perfil Profissional</a
-        >
-      </div>
+    <div class="cabecalho">
+      <img src="{{ url_for('static', filename='imagens/logoverde.png') }}"
+           alt="Beatriz Vasconcelos - Consultora de Alimentos" />
     </div>
-  </body>
-</html>
+  </header>
+
+  <div class="home-container">
+    <div class="home-textos">
+      <section class="home-intro">
+        <h1>CONSULTORIA ESPECIALIZADA EM SEGURANÇA E QUALIDADE DE ALIMENTOS</h1>
+        <hr />
+        <p class="texto-paragrafo">
+          Atendemos indústrias de alimentos e serviços de alimentação, oferecendo um
+          atendimento personalizado, com soluções especializadas para garantir qualidade
+          e segurança dos alimentos. Com anos de experiência comprovada no setor
+          alimentício e resultados reais, nossa consultoria garante conformidade com a
+          legislação vigente e produtos seguros ao consumidor final.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <section class="cta-materiais">
+    <div class="cta-materiais__conteudo">
+      <h2>Materiais gratuitos para a sua operação</h2>
+      <p>
+        Checklists, modelos de documentos e guias práticos de boas práticas de fabricação.
+        Baixe gratuitamente — novos materiais são publicados com frequência.
+      </p>
+      <a class="botao-principal" href="{{ url_for('public.materiais') }}">Ver materiais gratuitos</a>
+    </div>
+  </section>
+
+  <section class="sobre">
+    <div class="container">
+      <h2 class="subtitulo">QUEM SOU EU?</h2>
+      <p class="texto-paragrafo">
+        Sou Beatriz Vasconcelos, Tecnóloga em Alimentos, atuo há 12 anos na implantação de
+        sistemas que melhoram a performance industrial, aumentam a qualidade dos produtos e
+        dos processos.
+      </p>
+      <p class="texto-paragrafo">
+        Tenho experiência com BPF, HACCP, IFS, ISO 9001, shelf life e gestão da qualidade.
+        Já atendi panificação, frigoríficos, supermercados e outros segmentos alimentícios.
+      </p>
+      <p class="texto-paragrafo">
+        Lidero equipes, capacito pessoas e busco sempre transformar desafios em soluções,
+        garantindo produtos seguros e a confiança do consumidor.
+      </p>
+    </div>
+
+    <section class="mosaico-imagens">
+      <div class="galeria-mosaico">
+        <div class="first-image">
+          <img loading="lazy" src="{{ url_for('static', filename='imagens/chef-na-cozinha-tomando-notas.jpg') }}" alt="Profissional fazendo anotações em uma cozinha industrial" />
+        </div>
+        <div class="second-image">
+          <img loading="lazy" src="{{ url_for('static', filename='imagens/woman-with-notepad-vegetables-kitchen-table-preparing-recipe.jpg') }}" alt="Profissional avaliando vegetais sobre a bancada" />
+        </div>
+        <div class="third-image">
+          <img loading="lazy" src="{{ url_for('static', filename='imagens/mulher-escrita-e-turvo-fruta.jpg') }}" alt="Profissional registrando informações ao lado de frutas" />
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section class="servicos">
+    <span class="servicos subtitulo"><h2>SOLUÇÕES</h2></span>
+    <table class="servicos-tabela interativa">
+      <thead>
+        <tr><th scope="col">Serviço</th><th scope="col">Descrição</th></tr>
+      </thead>
+      <tbody>
+        <tr class="linha-servico"><td class="titulo-servico">Consultoria</td><td class="descricao">Visita técnica, relatório de diagnóstico e criação de plano de ação.</td></tr>
+        <tr class="linha-servico"><td class="titulo-servico">Assessoria</td><td class="descricao">Consultoria com acompanhamento da execução do plano de ação.</td></tr>
+        <tr class="linha-servico"><td class="titulo-servico">Auditoria</td><td class="descricao">Auditoria de BPF, ISO 9001:2015, 5S, IFS e em fornecedores para homologação.</td></tr>
+        <tr class="linha-servico"><td class="titulo-servico">Documentação</td><td class="descricao">Checklists, POPs, ITs, Fichas Técnicas, APPCC/HACCP e outros documentos de qualidade.</td></tr>
+        <tr class="linha-servico"><td class="titulo-servico">Treinamentos In Company</td><td class="descricao">Capacitações presenciais realizadas diretamente na empresa.</td></tr>
+        <tr class="linha-servico"><td class="titulo-servico">Cliente Oculto</td><td class="descricao">Visita anônima para avaliar o atendimento e a qualidade dos produtos.</td></tr>
+        <tr class="linha-servico"><td class="titulo-servico">Shelf Life</td><td class="descricao">Estudo técnico para definir o prazo de validade dos produtos.</td></tr>
+        <tr class="linha-servico"><td class="titulo-servico">Rotulagem</td><td class="descricao">Criação e revisão de tabelas nutricionais e rótulos.</td></tr>
+      </tbody>
+    </table>
+
+    <section class="publico-alvo">
+      <h2>ÁREAS DE ATUAÇÃO</h2>
+      <div class="item-publico">
+        <img loading="lazy" src="{{ url_for('static', filename='imagens/fabrica.png') }}" alt="" />
+        <h3>INDÚSTRIAS</h3>
+        <p class="texto-paragrafo">Indústrias de alimentos<br />Indústrias em geral (5S e ISO 9001:2015)</p>
+      </div>
+      <div class="item-publico">
+        <img loading="lazy" src="{{ url_for('static', filename='imagens/prato.png') }}" alt="" />
+        <h3>SERVIÇOS DE ALIMENTAÇÃO</h3>
+        <p class="texto-paragrafo">Supermercados<br />Padarias<br />Restaurantes<br />Pizzarias<br />Lanchonetes<br />Cafeterias<br />Food Trucks</p>
+      </div>
+      <div class="item-publico">
+        <img loading="lazy" src="{{ url_for('static', filename='imagens/pessoas.png') }}" alt="" />
+        <h3>PESSOAS</h3>
+        <p class="texto-paragrafo">Treinamentos</p>
+      </div>
+    </section>
+  </section>
+{% endblock %}

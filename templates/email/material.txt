@@ -1,0 +1,21 @@
+Olá, {{ lead.full_name }}!
+
+Obrigada pelo interesse. Aqui está o material que você solicitou:
+{{ material.title }}
+
+O arquivo em PDF está anexado a este e-mail. Você também pode baixá-lo por este link
+(validade limitada):
+
+{{ link_download }}
+
+--
+Precisa de apoio na segurança e qualidade de alimentos da sua operação?
+Fale com a Beatriz Vasconcelos - Consultora de Alimentos:
+
+E-mail: {{ contato_email }}
+WhatsApp: {{ contato_whatsapp }}
+Instagram: {{ contato_instagram }}
+LinkedIn: {{ contato_linkedin }}
+
+Você recebeu este e-mail porque solicitou um material gratuito no site bvconsultora.com
+e autorizou o contato. Para não receber mais mensagens, responda pedindo a remoção.
