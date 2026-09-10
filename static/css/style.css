@@ -1,37 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@100..900&display=swap");
 
-/* Ajuste dos caminhos das fontes locais baseados na pasta static/ */
+/* Fontes locais (self-hosted). Caminhos relativos a static/css/ */
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf")
+  src: url("../fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf")
     format("truetype");
   font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  src: url("../fonts/inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
   font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf")
+  src: url("../fonts/montserrat/Montserrat-Italic-VariableFont_wght.ttf")
     format("truetype");
   font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
+  src: url("../fonts/montserrat/Montserrat-VariableFont_wght.ttf")
     format("truetype");
   font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* ===================================================================
+   Paleta e tokens de design — mesma identidade visual já existente.
+   =================================================================== */
+:root {
+  --verde-claro: rgb(144, 164, 132);
+  --verde-medio: rgb(136, 154, 123);
+  --verde-escuro: #5f7454;
+  --verde-texto: #3d4a36;
+  --verde-borda: #43513b;
+  --bg-suave: #f6f8f4;
+  --bg-card: #f9faf8;
+  --branco: #ffffff;
+  --cinza-linha: #e4e4e4;
+  --erro: #b23b3b;
+  --ok: #3f7d46;
+
+  --fonte-titulo: "Montserrat", "Segoe UI", Arial, sans-serif;
+  --fonte-texto: "Montserrat", "Segoe UI", Arial, sans-serif;
+
+  --raio: 0.75rem;
+  --sombra-card: 0 4px 20px rgba(95, 116, 84, 0.12);
+  --largura-conteudo: 1120px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--verde-escuro);
+  outline-offset: 2px;
 }
 
 /* AVOCADO */
@@ -175,19 +212,21 @@
 }
 
 body {
-  font-family: "Montserrat";
+  font-family: var(--fonte-texto);
   font-weight: 300;
   overflow-x: hidden;
+  background: var(--bg-suave);
+  color: var(--verde-texto);
 }
 
 html {
   overflow-x: hidden;
 }
 
-header {
+.hero {
   position: relative;
   height: 50vh;
-  background-color: rgb(144, 164, 132);
+  background-color: var(--verde-claro);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -201,7 +240,7 @@ header {
   gap: 2rem;
 }
 
-header > .cabecalho img {
+.hero > .cabecalho img {
   width: 280px;
   height: 280px;
 }
@@ -648,7 +687,7 @@ main li {
     font-size: 1.1rem;
   }
 
-  header {
+  .hero {
     padding: 1.2rem 1rem;
   }
 
@@ -803,5 +842,196 @@ main li {
 
   .galeria-mosaico img {
     max-height: 120px;
+  }
+}
+
+/* ===================================================================
+   Componentes compartilhados (nav, botões, avisos) e área de materiais
+   Adicionados na reformulação — mantêm a paleta existente.
+   =================================================================== */
+
+.pular-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--verde-escuro);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  z-index: 100;
+}
+.pular-link:focus {
+  left: 0;
+}
+
+/* --- Navegação principal --- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 1.5rem;
+  background: var(--branco);
+  border-bottom: 1px solid var(--cinza-linha);
+  flex-wrap: wrap;
+}
+.site-nav__marca img {
+  display: block;
+  height: 42px;
+  width: auto;
+}
+.site-nav__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-nav__links a {
+  color: var(--verde-texto);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0;
+  border-bottom: 2px solid transparent;
+}
+.site-nav__links a:hover,
+.site-nav__links a:focus-visible {
+  border-bottom-color: var(--verde-escuro);
+}
+
+/* --- Botões --- */
+.botao-principal,
+.botao-secundario {
+  display: inline-block;
+  border: 2px solid var(--verde-escuro);
+  border-radius: 999px;
+  padding: 0.8rem 1.8rem;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.botao-principal {
+  background: var(--verde-escuro);
+  color: #fff;
+}
+.botao-principal:hover,
+.botao-principal:focus-visible {
+  background: var(--verde-texto);
+  border-color: var(--verde-texto);
+}
+.botao-secundario {
+  background: transparent;
+  color: var(--verde-escuro);
+}
+.botao-secundario:hover,
+.botao-secundario:focus-visible {
+  background: var(--verde-escuro);
+  color: #fff;
+}
+
+/* --- Mensagens flash --- */
+.flash-area {
+  max-width: var(--largura-conteudo);
+  margin: 1rem auto 0;
+  padding: 0 1.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.flash {
+  padding: 0.85rem 1.1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid;
+  font-size: 0.98rem;
+}
+.flash--ok {
+  background: #eef5ee;
+  border-color: var(--ok);
+  color: #275b2d;
+}
+.flash--erro {
+  background: #fbeeee;
+  border-color: var(--erro);
+  color: #7c2626;
+}
+.flash--aviso {
+  background: #fdf6e9;
+  border-color: #b8860b;
+  color: #6b4e08;
+}
+
+/* --- CTA de materiais na home --- */
+.cta-materiais {
+  background: var(--bg-suave);
+  padding: 3.5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.cta-materiais__conteudo {
+  max-width: 760px;
+  text-align: center;
+}
+.cta-materiais h2 {
+  color: var(--verde-escuro);
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+.cta-materiais p {
+  color: var(--verde-texto);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Home: aceitar <h1> onde antes havia <h2> --- */
+.home-intro h1 {
+  align-self: center;
+  width: 40%;
+  margin: 1rem 1rem 0.5rem 0.5rem;
+  color: var(--verde-escuro);
+  text-align: start;
+  font-size: 2rem;
+  line-height: 1.25;
+}
+.publico-alvo h2 {
+  width: 100%;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Rodapé: deixar quebrar em telas médias em vez de espremer */
+.contato-info {
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  padding: 2rem 1.5rem;
+}
+.rodape-legal {
+  flex-basis: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+.rodape-legal a {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .home-intro h1 {
+    width: 100%;
+    font-size: 1.7rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .site-nav {
+    padding: 0.5rem 1rem;
+  }
+  .site-nav__links {
+    gap: 1rem;
+    font-size: 0.95rem;
   }
 }
