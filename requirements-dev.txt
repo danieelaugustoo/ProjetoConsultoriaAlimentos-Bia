@@ -1,0 +1,5 @@
+-r requirements.txt
+
+# Auditoria de segurança (rodar antes de publicar)
+pip-audit
+bandit

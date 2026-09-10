@@ -1,0 +1,39 @@
+# Núcleo web
+Flask==3.1.3
+Werkzeug==3.1.8
+Jinja2==3.1.6
+itsdangerous==2.2.0
+MarkupSafe==3.0.3
+click==8.5.0
+blinker==1.9.0
+
+# Banco de dados (ORM)
+Flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.52
+
+# Formulários, CSRF e validação
+Flask-WTF==1.3.0
+WTForms==3.2.2
+email-validator==2.3.0
+
+# Autenticação do painel admin
+Flask-Login==0.6.3
+
+# Proteção contra abuso (rate limiting)
+Flask-Limiter==4.1.1
+limits==5.8.0
+
+# Configuração via .env
+python-dotenv==1.2.3
+
+# Envio de e-mail (API Brevo) e download de nada além disso
+requests==2.34.2
+
+# Sanitização de HTML gerado no painel
+bleach==6.4.0
+
+# Validação de imagens de capa enviadas no painel
+pillow==12.3.0
+
+# Servidor WSGI de produção
+gunicorn==26.2.0

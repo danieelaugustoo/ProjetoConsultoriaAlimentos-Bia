@@ -1,0 +1,35 @@
+# Ambiente virtual
+.venv/
+venv/
+back-end/.venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Segredos e configuração local
+.env
+*.env
+!.env.example
+
+# Instância (banco de dados, uploads, logs) — nunca versionar
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# Ferramentas locais
+.claude/
+
+# Sistema operacional / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
