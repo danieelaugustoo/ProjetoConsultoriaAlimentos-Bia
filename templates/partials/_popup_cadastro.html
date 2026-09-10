@@ -1,0 +1,66 @@
+{% if popup_enabled %}
+<div class="modal-overlay" id="popup-cadastro" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="popup-titulo">
+    <button type="button" class="modal__fechar" data-popup-dispensar aria-label="Fechar">&times;</button>
+
+    <h2 id="popup-titulo">Receba materiais gratuitos</h2>
+    <p class="modal__intro">
+      Checklists, modelos de documentos e guias de boas práticas de fabricação, direto no
+      seu e-mail. Deixe seus dados ou continue navegando.
+    </p>
+
+    <form method="post" action="{{ url_for('public.cadastro') }}" novalidate class="form-lead">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      <input type="hidden" name="ts" value="{{ carimbo_form }}" />
+      <div class="hp-campo" aria-hidden="true">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <div class="campo">
+        <label for="pop-nome">Nome completo</label>
+        <input id="pop-nome" name="full_name" type="text" autocomplete="name" required />
+      </div>
+      <div class="campo">
+        <label for="pop-email">E-mail</label>
+        <input id="pop-email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div class="campo">
+        <label for="pop-empresa">Nome da empresa</label>
+        <input id="pop-empresa" name="company" type="text" autocomplete="organization" required />
+      </div>
+      <div class="campo">
+        <label for="pop-cargo">Cargo</label>
+        <input id="pop-cargo" name="role" type="text" autocomplete="organization-title" required />
+      </div>
+      <div class="campo">
+        <label for="pop-origem">Como você conheceu a Beatriz Vasconcelos?</label>
+        <select id="pop-origem" name="referral_source" required data-origem>
+          <option value="">Selecione uma opção</option>
+          {% for chave, rotulo in origens %}
+            <option value="{{ chave }}">{{ rotulo }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="campo" data-origem-outro hidden>
+        <label for="pop-outro">Conte um pouco mais</label>
+        <input id="pop-outro" name="referral_other" type="text" />
+      </div>
+
+      <div class="campo campo--checkbox">
+        <label>
+          <input type="checkbox" name="consent_lgpd" value="y" required />
+          <span>Autorizo o contato e o tratamento dos meus dados conforme a
+            <a href="{{ url_for('public.privacidade') }}" target="_blank" rel="noopener">Política de Privacidade</a>.</span>
+        </label>
+      </div>
+
+      {% if turnstile_enabled %}
+        <div class="cf-turnstile" data-sitekey="{{ turnstile_site_key }}"></div>
+      {% endif %}
+
+      <button type="submit" class="botao-principal">Quero receber</button>
+      <button type="button" class="modal__recusar" data-popup-dispensar>Agora não</button>
+    </form>
+  </div>
+</div>
+{% endif %}
