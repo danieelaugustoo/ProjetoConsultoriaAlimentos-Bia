@@ -122,16 +122,43 @@ flask --app wsgi resend-email <lead_id>    # reenvia o material para um lead
 flask --app wsgi purge-leads --dias 365    # remove leads antigos (retenção LGPD)
 ```
 
+## Fluxo de cadastro (double opt-in)
+
+Tanto o formulário de um material quanto o pop-up de entrada criam um lead **não
+confirmado** e enviam um e-mail com link de confirmação. Só depois do clique:
+
+- lead de material → recebe o e-mail com o PDF anexado + link de download;
+- lead do pop-up → recebe um e-mail de boas-vindas com o link para `/materiais`.
+
+Isso evita cadastro com e-mail falso e uso do envio como disparador de spam.
+
+## Pop-up de entrada
+
+Modal dispensável que aparece uma vez por visitante (controle em `localStorage`).
+"Agora não" fecha e o site continua 100% acessível. Ligar/desligar em `POPUP_ENABLED`.
+
 ## Segurança (resumo)
 
 - ORM em todas as consultas (sem SQL manual) → sem SQL injection.
 - Autoescape do Jinja + sanitização com `bleach` no texto dos materiais → sem XSS
   armazenado. CSP restritiva nos cabeçalhos.
 - CSRF em todos os formulários (Flask-WTF).
-- Rate limiting: formulário público 5/h por IP; login do admin 5/min por IP.
+- Rate limiting: formulário público 5/h por IP; login do admin 5/min por IP;
+  confirmação 20/h por IP.
+- Anti-bot no formulário: honeypot de campo, honeypot de tempo (envio em menos de 2s
+  é recusado), Cloudflare Turnstile (opcional, via `TURNSTILE_*`).
+- Bloqueio de e-mail descartável (`app/data/disposable_domains.txt`) e limite de
+  3 solicitações por e-mail a cada 24h.
+- Double opt-in: nada é enviado antes da confirmação do e-mail.
 - Senha do admin com hash scrypt; cookies `HttpOnly`/`Secure`/`SameSite=Lax`.
 - Upload valida assinatura do PDF (`%PDF-`) e a imagem via Pillow; arquivos ficam
   fora da raiz web (`instance/uploads/`), servidos só por rota controlada.
 - IP dos leads guardado como hash, não em claro. Consentimento LGPD obrigatório e
   registrado; página `/privacidade`.
 - Antes de publicar: `pip-audit -r requirements.txt` e `bandit -r app`.
+
+## Mudança de schema durante o desenvolvimento
+
+O projeto não usa Alembic. Se os modelos mudarem, apague `instance/*.db` e rode
+`flask --app wsgi create-admin` de novo — o banco é recriado a partir dos modelos.
+Em produção o banco já nasce com o schema correto na primeira publicação.
