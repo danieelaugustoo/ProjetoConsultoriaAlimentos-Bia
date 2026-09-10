@@ -49,7 +49,15 @@
     </main>
 
     {% include "partials/_footer.html" %}
+    {% include "partials/_popup_cadastro.html" %}
 
+    <script src="{{ url_for('static', filename='js/form.js') }}" defer></script>
+    {% if popup_enabled %}
+      <script src="{{ url_for('static', filename='js/popup.js') }}" defer></script>
+    {% endif %}
+    {% if turnstile_enabled %}
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+    {% endif %}
     {% block scripts %}{% endblock %}
   </body>
 </html>

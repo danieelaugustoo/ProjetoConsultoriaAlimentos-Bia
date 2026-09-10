@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Confirme seu e-mail — Beatriz Vasconcelos{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/materiais.css') }}" />{% endblock %}
+
+{% block content %}
+  <section class="mensagem-central">
+    <div class="mensagem-central__icone" aria-hidden="true">&#9993;</div>
+    <h1>Quase lá: confirme seu e-mail</h1>
+    <p>
+      Enviamos uma mensagem para o e-mail informado. Clique no link de confirmação para
+      concluir o cadastro e liberar o acesso aos materiais.
+    </p>
+    <p class="mensagem-central__obs">Não chegou? Confira a caixa de spam ou promoções.</p>
+    <a class="botao-principal" href="{{ url_for('public.materiais') }}">Ver materiais gratuitos</a>
+  </section>
+{% endblock %}

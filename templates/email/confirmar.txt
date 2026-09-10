@@ -1,0 +1,9 @@
+Olá, {{ lead.full_name }}!
+
+Recebemos seu cadastro. Para concluir, confirme seu e-mail neste link:
+
+{{ link_confirmar }}
+{% if lead.source == "material" and lead.material %}
+Depois da confirmação você recebe {{ lead.material.title }} com o PDF em anexo.
+{% endif %}
+Se você não fez esse cadastro, ignore este e-mail.

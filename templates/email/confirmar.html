@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-br">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /></head>
+<body style="margin:0;padding:0;background:#f6f8f4;font-family:Arial,Helvetica,sans-serif;color:#3d4a36;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f6f8f4;padding:24px 0;">
+    <tr><td align="center">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(95,116,84,0.12);">
+        <tr><td style="background:#5f7454;padding:24px 32px;color:#fff;font-size:18px;font-weight:bold;">
+          Beatriz Vasconcelos &middot; Consultora de Alimentos
+        </td></tr>
+        <tr><td style="padding:32px;">
+          <p style="margin:0 0 16px;font-size:16px;">Olá, {{ lead.full_name }}!</p>
+          <p style="margin:0 0 16px;font-size:16px;line-height:1.5;">
+            Recebemos seu cadastro. Para concluir e proteger seu e-mail contra uso indevido,
+            confirme clicando no botão abaixo:
+          </p>
+          <p style="margin:0 0 24px;">
+            <a href="{{ link_confirmar }}"
+               style="display:inline-block;background:#5f7454;color:#fff;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:16px;font-weight:bold;">
+              Confirmar meu e-mail
+            </a>
+          </p>
+          {% if lead.source == "material" and lead.material %}
+            <p style="margin:0;font-size:14px;color:#6b7766;">
+              Depois da confirmação você recebe <strong>{{ lead.material.title }}</strong> com o PDF em anexo.
+            </p>
+          {% endif %}
+          <p style="margin:16px 0 0;font-size:13px;color:#6b7766;">
+            Se você não fez esse cadastro, é só ignorar este e-mail.
+          </p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

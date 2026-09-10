@@ -27,12 +27,15 @@
 
       <aside class="material-detalhe__form" id="baixar">
         <h2>Receba o material no seu e-mail</h2>
-        <form method="post"
+        <p class="material-detalhe__form-obs">
+          Você recebe um e-mail para confirmar e então o material chega com o PDF anexado.
+        </p>
+        <form method="post" class="form-lead"
               action="{{ url_for('public.solicitar_material', slug=material.slug) }}"
               novalidate>
-          {{ form.hidden_tag() }}
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+          <input type="hidden" name="ts" value="{{ carimbo_form }}" />
 
-          {# Honeypot: não remova; fica invisível para humanos #}
           <div class="hp-campo" aria-hidden="true">
             {{ form.website(tabindex="-1", autocomplete="off") }}
           </div>
@@ -93,11 +96,4 @@
       </aside>
     </div>
   </article>
-{% endblock %}
-
-{% block scripts %}
-  <script src="{{ url_for('static', filename='js/form.js') }}" defer></script>
-  {% if turnstile_enabled %}
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
-  {% endif %}
 {% endblock %}

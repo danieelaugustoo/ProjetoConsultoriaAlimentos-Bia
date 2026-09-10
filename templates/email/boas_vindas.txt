@@ -1,0 +1,10 @@
+Olá, {{ lead.full_name }}!
+
+Seu e-mail está confirmado. Acesse a área de materiais gratuitos:
+
+{{ link_materiais }}
+
+--
+E-mail: {{ contato_email }}
+WhatsApp: {{ contato_whatsapp }}
+Instagram: {{ contato_instagram }}

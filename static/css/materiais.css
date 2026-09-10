@@ -165,6 +165,11 @@
 .material-detalhe__form h2 {
   color: var(--verde-escuro);
   font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+.material-detalhe__form-obs {
+  font-size: 0.85rem;
+  color: #6b7766;
   margin-bottom: 1.25rem;
 }
 .campo {
@@ -172,6 +177,9 @@
   flex-direction: column;
   gap: 0.35rem;
   margin-bottom: 1rem;
+}
+.campo[hidden] {
+  display: none;
 }
 .campo label {
   font-weight: 600;

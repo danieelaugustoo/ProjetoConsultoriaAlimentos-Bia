@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Material enviado — Beatriz Vasconcelos{% endblock %}
+{% block title %}Confirme seu e-mail — Beatriz Vasconcelos{% endblock %}
 {% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/materiais.css') }}" />{% endblock %}
 
 {% block content %}
   <section class="mensagem-central">
-    <div class="mensagem-central__icone" aria-hidden="true">&#10003;</div>
-    <h1>Pronto! Enviamos o material para o seu e-mail</h1>
+    <div class="mensagem-central__icone" aria-hidden="true">&#9993;</div>
+    <h1>Falta um passo: confirme seu e-mail</h1>
     <p>
-      O material <strong>{{ material.title }}</strong> foi enviado para o e-mail informado,
-      com o arquivo em anexo e um link de download.
+      Enviamos uma mensagem para o e-mail informado com um link de confirmação. Ao clicar
+      nele, você recebe <strong>{{ material.title }}</strong> com o PDF em anexo.
     </p>
     <p class="mensagem-central__obs">
       Não chegou em alguns minutos? Verifique a caixa de spam ou promoções. Se precisar,

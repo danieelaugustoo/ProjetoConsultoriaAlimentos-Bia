@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro confirmado — Beatriz Vasconcelos{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/materiais.css') }}" />{% endblock %}
+
+{% block content %}
+  <section class="mensagem-central">
+    <div class="mensagem-central__icone" aria-hidden="true">&#10003;</div>
+    {% if repetido %}
+      <h1>Este e-mail já estava confirmado</h1>
+      <p>Não precisa fazer nada. Veja os materiais disponíveis abaixo.</p>
+    {% elif lead.source == "material" and lead.material %}
+      <h1>Confirmado! O material está a caminho</h1>
+      <p>
+        Enviamos <strong>{{ lead.material.title }}</strong> para o seu e-mail, com o PDF em
+        anexo e um link de download.
+      </p>
+    {% else %}
+      <h1>Cadastro confirmado</h1>
+      <p>Pronto! Agora é só aproveitar os materiais gratuitos.</p>
+    {% endif %}
+    <a class="botao-principal" href="{{ url_for('public.materiais') }}">Ver materiais gratuitos</a>
+  </section>
+{% endblock %}
